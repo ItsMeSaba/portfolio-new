@@ -9,13 +9,54 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #000;
     --foreground: #ededed;
   }
 }
 
 body {
+  overflow-x: hidden;
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body::-webkit-scrollbar {
+  width: 0;
+}
+
+.transparency {
+  /* From https://css.glass */
+  backdrop-filter: blur(5px) saturate(400%);
+  -webkit-backdrop-filter: blur(5px) saturate(400%);
+  background-color: rgba(10, 10, 10, 0.5);
+  border-radius: 12px;
+}
+
+.transparency-darker {
+  /* From https://css.glass */
+  backdrop-filter: blur(30px) saturate(200%);
+  -webkit-backdrop-filter: blur(30px) saturate(200%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+}
+
+/* .container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 1rem;
+} */
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.carousel-track {
+  animation: scroll 15s linear infinite;
 }
