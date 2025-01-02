@@ -1,19 +1,22 @@
 'use client'
 
+import { TechnologyIcon } from '@/components/elements/technology-icon/TechnologyIcon';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 
 const slideSize = 40;
 
 const slides = [
-  { icon: <Image src={'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg'} width={slideSize} height={slideSize} alt="GE" className="invert" /> },
-  { icon: <Image src={'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg'} width={slideSize} height={slideSize} alt="GE" className="" /> },
-  { icon: <Image src={'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg'} width={slideSize} height={slideSize} alt="GE" className="" /> },
-  { icon: <Image src={'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg'} width={slideSize} height={slideSize} alt="GE" className="" /> },
-  { icon: <Image src={'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg'} width={slideSize} height={slideSize} alt="GE" className="" /> },
-  { icon: <Image src={'https://static-00.iconduck.com/assets.00/contentful-icon-454x512-8ffc9x65.png'} width={slideSize} height={slideSize} alt="GE" className="" /> },
-  { icon: <Image src={'https://s3.amazonaws.com/cmscritic.mediasite.org/assets/products/storyblok/logo-1575659434275.png?v=1689110467212'} width={slideSize} height={slideSize} alt="GE" className="" /> },
-  { icon: <Image src={'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nuxtjs/nuxtjs-original.svg'} width={slideSize} height={slideSize} alt="GE" className="" /> },
+  { icon: <TechnologyIcon name='javascript' width={slideSize} height={slideSize} /> },
+  { icon: <TechnologyIcon name='typescript' width={slideSize} height={slideSize} /> },
+  { icon: <TechnologyIcon name='react' width={slideSize} height={slideSize} /> },
+  { icon: <TechnologyIcon name='nextjs' width={slideSize} height={slideSize} /> },
+  { icon: <TechnologyIcon name='nodejs' width={slideSize} height={slideSize} /> },
+  { icon: <TechnologyIcon name='nestjs' width={slideSize} height={slideSize} /> },
+  { icon: <TechnologyIcon name='vercel' width={slideSize} height={slideSize} className='invert' /> },
+  { icon: <TechnologyIcon name='netlify' width={slideSize} height={slideSize} /> },
+  { icon: <TechnologyIcon name='contentful' width={slideSize} height={slideSize} /> },
+  { icon: <TechnologyIcon name='storyblok' width={slideSize} height={slideSize} /> },
+  { icon: <TechnologyIcon name='strapi' width={slideSize} height={slideSize} /> },
 ];
 
 export function Carousel() {

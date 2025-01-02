@@ -2,6 +2,7 @@ import { Timeline } from "@/components/aceternity-ui/timeline/Timeline";
 import Image from "next/image";
 import BejamasLogo from '@/assets/img/bejamas-logo-2.png'
 import UnisoftLogo from '@/assets/img/unisoft-logo-2.png'
+import { TechnologyIcon } from "@/components/elements/technology-icon/TechnologyIcon";
 
 const data = [
   {
@@ -9,7 +10,6 @@ const data = [
     content: (
       <div>
         <div className="flex items-center">
-          {/* <Image src={BejamasLogo} className="w-16" alt='' /> */}
           <Image src={BejamasLogo} width={50} className="mr-4" alt='' />
           <h2 className="text-4xl mb-0 font-semibold">Bejamas</h2>
         </div>
@@ -29,13 +29,15 @@ const data = [
             <li>Improving website performance to pass CWV</li>
           </ul>
 
-          <div className="flex gap-6">
-            <Image src={'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg'} width={35} height={35} alt="GE" className="invert" />
-            <Image src={'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg'} width={35} height={35} alt="GE" className="" />
-            <Image src={'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg'} width={35} height={35} alt="GE" className="" />
-            <Image src={'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg'} width={35} height={35} alt="GE" className="" />
-            <Image src={'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg'} width={35} height={35} alt="GE" className="" />
-            <Image src={'https://static-00.iconduck.com/assets.00/contentful-icon-454x512-8ffc9x65.png'} width={35} height={35} alt="GE" className="" />
+          <div className="flex gap-6 flex-wrap">
+            <TechnologyIcon name="javascript" />
+            <TechnologyIcon name="typescript" />
+            <TechnologyIcon name="nextjs" className="invert" />
+            <TechnologyIcon name="vercel" className="invert" />
+            <TechnologyIcon name="netlify" />
+            <TechnologyIcon name="contentful" />
+            <TechnologyIcon name="storyblok" />
+            <TechnologyIcon name="strapi" />
           </div>
         </div>
       </div>
@@ -63,14 +65,12 @@ const data = [
             <li>Working with database</li>
           </ul>
 
-          <div className="flex gap-6">
-            <Image src={'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg'} width={35} height={35} alt="GE" className="invert" />
-            <Image src={'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg'} width={35} height={35} alt="GE" className="" />
-            <Image src={'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg'} width={35} height={35} alt="GE" className="" />
-            <Image src={'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg'} width={35} height={35} alt="GE" className="" />
-            <Image src={'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg'} width={35} height={35} alt="GE" className="" />
-            <Image src={'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg'} width={35} height={35} alt="GE" className="" />
-            <Image src={'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg'} width={35} height={35} alt="GE" className="" />
+          <div className="flex gap-6 flex-wrap">
+            <TechnologyIcon name="typescript" />
+            <TechnologyIcon name="react" />
+            <TechnologyIcon name="nodejs" />
+            <TechnologyIcon name="mongodb" />
+            <TechnologyIcon name="nestjs" />
           </div>
         </div>
       </div>
@@ -78,9 +78,9 @@ const data = [
   },
 ]
 
-export function Experience() {
+export function Experience({ id }: any) {
   return (
-    <div className="py-40">
+    <div className="py-40" id={id}>
       <Timeline
         data={data}
       />

@@ -8,20 +8,23 @@ import { Text } from "@/components/sections/Text/Text";
 import { Carousel } from "@/components/sections/Carousel/Carousel";
 import { Experience } from "@/components/sections/Experience/Experience";
 import { Projects } from "@/components/sections/Projects/Projects";
+import { Socials } from "@/components/sections/Socials/Socials";
 
 export default function Home() {
   return (
-    <div className="min-h-screen relative font-[family-name:var(--font-geist-sans)] pb-52">
+    <div className="min-h-screen relative font-[family-name:var(--font-geist-sans)]">
       <main className="w-full min-h-screen">
         <Hero />
 
-        <Text words="Hi there! 👋 I'm Saba, web developer with a knack for building sleek, user-friendly websites. With a strong foundation in Javascript ecosystem, having more than 3 years of experience, I love crafting seamless digital experiences that not only look great but also perform flawlessly." textClassName="text-3xl leading-[50px]" />
+        <Text id='about' words="Hi there! 👋 I'm Saba, web developer with a knack for building sleek, user-friendly websites. With a strong foundation in Javascript ecosystem, having more than 3 years of experience, I love crafting seamless digital experiences that not only look great but also perform flawlessly." textClassName="leading-[40px] text-2xl md:text-3xl md:leading-[50px]" />
 
         <Carousel />
 
-        <Experience />
+        <Experience id="experience" />
 
-        <Projects />
+        {/* <Projects /> */}
+
+        <Socials id="contact" />
       </main>
     </div>
   );

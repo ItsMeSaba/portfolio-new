@@ -6,8 +6,8 @@ export function Hero() {
   return (
     <section className="container min-h-screen relative select-none flex items-center">
       <Vortex
-        rangeY={200}
-        particleCount={800}
+        rangeY={150}
+        particleCount={600}
       />
 
       <div className="relative z-10 flex items-center justify-left w-full h-full">
