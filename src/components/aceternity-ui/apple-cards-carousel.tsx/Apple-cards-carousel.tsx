@@ -20,6 +20,7 @@ import { useOutsideClick } from "@/base/hooks/use-outside-click";
 interface CarouselProps {
   items: JSX.Element[];
   initialScroll?: number;
+  title?: string;
 }
 
 type Card = {
@@ -37,7 +38,11 @@ export const CarouselContext = createContext<{
   currentIndex: 0,
 });
 
-export const AppleCarousel = ({ items, initialScroll = 0 }: CarouselProps) => {
+export const AppleCarousel = ({
+  items,
+  initialScroll = 0,
+  title,
+}: CarouselProps) => {
   const carouselRef = React.useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = React.useState(false);
   const [canScrollRight, setCanScrollRight] = React.useState(true);
@@ -92,8 +97,35 @@ export const AppleCarousel = ({ items, initialScroll = 0 }: CarouselProps) => {
       value={{ onCardClose: handleCardClose, currentIndex }}
     >
       <div className="relative w-full">
+        <div className="flex flex-row justify-between items-center">
+          {title && (
+            <div className="flex flex-row justify-start gap-4 pl-4">
+              <h2 className="text-3xl font-semibold">{title}</h2>
+            </div>
+          )}
+
+          <div className="flex justify-end gap-2 mr-10">
+            <button
+              className="relative text-black font-extrabold z-40 h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
+              onClick={scrollLeft}
+              disabled={!canScrollLeft}
+            >
+              {/* <IconArrowNarrowLeft className="h-6 w-6 text-gray-500" /> */}
+              {"<"}
+            </button>
+            <button
+              className="relative text-black font-extrabold z-40 h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
+              onClick={scrollRight}
+              disabled={!canScrollRight}
+            >
+              {/* <IconArrowNarrowRight className="h-6 w-6 text-gray-500" /> */}
+              {">"}
+            </button>
+          </div>
+        </div>
+
         <div
-          className="flex w-full overflow-x-scroll overscroll-x-auto py-10 md:py-20 scroll-smooth [scrollbar-width:none]"
+          className="flex w-full overflow-x-scroll overscroll-x-auto py-10 md:pb-20 md:pt-10 scroll-smooth [scrollbar-width:none]"
           ref={carouselRef}
           onScroll={checkScrollability}
         >
@@ -134,24 +166,6 @@ export const AppleCarousel = ({ items, initialScroll = 0 }: CarouselProps) => {
             ))}
           </div>
         </div>
-        <div className="flex justify-end gap-2 mr-10">
-          <button
-            className="relative text-black font-extrabold z-40 h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
-            onClick={scrollLeft}
-            disabled={!canScrollLeft}
-          >
-            {/* <IconArrowNarrowLeft className="h-6 w-6 text-gray-500" /> */}
-            {"<"}
-          </button>
-          <button
-            className="relative text-black font-extrabold z-40 h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
-            onClick={scrollRight}
-            disabled={!canScrollRight}
-          >
-            {/* <IconArrowNarrowRight className="h-6 w-6 text-gray-500" /> */}
-            {">"}
-          </button>
-        </div>
       </div>
     </CarouselContext.Provider>
   );
@@ -187,7 +201,9 @@ export const Card = ({
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [open]);
 
-  useOutsideClick(containerRef as React.RefObject<HTMLDivElement>, () => handleClose());
+  useOutsideClick(containerRef as React.RefObject<HTMLDivElement>, () =>
+    handleClose()
+  );
 
   const handleOpen = () => {
     setOpen(true);
