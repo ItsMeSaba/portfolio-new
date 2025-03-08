@@ -21,7 +21,7 @@ export default function Home() {
 
         <Text
           id="about"
-          words="Hi there! 👋 I'm Saba, web developer with a knack for building sleek, user-friendly websites. With a strong foundation in Javascript ecosystem, having more than 3 years of experience, I love crafting seamless digital experiences that not only look great but also perform flawlessly."
+          words="Web developer with a knack for building sleek, user-friendly websites. With a strong foundation in Javascript ecosystem, having more than 3 years of experience, I love crafting seamless digital experiences that not only look great but also perform flawlessly."
           textClassName="leading-[40px] text-2xl md:text-3xl md:leading-[50px]"
         />
 
