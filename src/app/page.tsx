@@ -29,7 +29,7 @@ export default function Home() {
 
         <Experience id="experience" />
 
-        <Projects />
+        <Projects id="projects" />
 
         <Socials id="contact" />
       </main>
