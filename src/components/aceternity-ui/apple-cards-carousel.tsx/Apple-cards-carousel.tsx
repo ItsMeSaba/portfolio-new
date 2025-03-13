@@ -97,9 +97,9 @@ export const AppleCarousel = ({
       value={{ onCardClose: handleCardClose, currentIndex }}
     >
       <div className="relative w-full">
-        <div className="flex flex-row justify-between items-center">
+        <div className="flex flex-col md:flex-row justify-between items-start gap-4 md:items-center">
           {title && (
-            <div className="flex flex-row justify-start gap-4 pl-4">
+            <div className="flex flex-row justify-start gap-4 md:pl-4">
               <h2 className="text-3xl font-semibold">{title}</h2>
             </div>
           )}
@@ -125,7 +125,7 @@ export const AppleCarousel = ({
         </div>
 
         <div
-          className="flex w-full overflow-x-scroll overscroll-x-auto py-10 md:pb-20 md:pt-10 scroll-smooth [scrollbar-width:none]"
+          className="flex w-full overflow-x-scroll overscroll-x-auto py-10 scroll-smooth [scrollbar-width:none]"
           ref={carouselRef}
           onScroll={checkScrollability}
         >

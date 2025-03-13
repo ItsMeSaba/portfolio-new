@@ -10,7 +10,10 @@ interface Props {
 
 export function Projects({ id }: Props) {
   return (
-    <div className="container" id={id}>
+    <div
+      className="container my-26 md:my-48 md:min-h-screen flex flex-col justify-center"
+      id={id}
+    >
       <AppleCarousel
         title="Projects I Contributed to at Bejamas"
         items={projectsData.map((project, index) => (

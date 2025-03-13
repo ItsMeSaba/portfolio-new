@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { cn } from "@/components/aceternity-ui/lib/utils";
 import React, { useEffect, useRef } from "react";
@@ -26,14 +26,15 @@ export function Vortex(props: VortexProps) {
   const particlePropCount = 9;
   const particlePropsLength = particleCount * particlePropCount;
   const rangeY = props.rangeY || 100;
-  const baseTTL = 50;
+  // const baseTTL = 50;
+  const baseTTL = 200;
   const rangeTTL = 150;
   const baseSpeed = props.baseSpeed || 0.0;
   // const rangeSpeed = props.rangeSpeed || 1.5;
-  const rangeSpeed = props.rangeSpeed || 1;
+  const rangeSpeed = props.rangeSpeed || 0.5;
   const baseRadius = props.baseRadius || 1;
   const rangeRadius = props.rangeRadius || 2;
-  const baseHue = props.baseHue || 220;
+  let baseHue = props.baseHue || 0;
   const rangeHue = 100;
   const noiseSteps = 3;
   const xOff = 0.00125;
@@ -44,8 +45,12 @@ export function Vortex(props: VortexProps) {
   const noise3D = createNoise3D();
   let particleProps = new Float32Array(particlePropsLength);
   let center: [number, number] = [0, 0];
+  let hueDirection = 1; // for changing color of particles
 
-  const mouseCoords = useRef<{ x: null | number, y: null | number }>({ x: null, y: null });
+  const mouseCoords = useRef<{ x: null | number; y: null | number }>({
+    x: null,
+    y: null,
+  });
   const isMouseDown = useRef(false);
 
   const HALF_PI: number = 0.5 * Math.PI;
@@ -106,14 +111,25 @@ export function Vortex(props: VortexProps) {
   const draw = (canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) => {
     tick++;
 
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // Update baseHue based on tick
+    if (tick % 2 === 0) {
+      // Adjust speed by changing modulo value
+      baseHue += hueDirection;
+      if (baseHue >= 250) hueDirection = -1;
+      if (baseHue <= 0) hueDirection = 1;
+    }
 
-    ctx.fillStyle = backgroundColor;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    // Skip every 3rd frame
+    if (tick % 3 !== 0) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    drawParticles(ctx);
-    renderGlow(canvas, ctx);
-    renderToScreen(canvas, ctx);
+      ctx.fillStyle = backgroundColor;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      drawParticles(ctx);
+      renderGlow(canvas, ctx);
+      renderToScreen(canvas, ctx);
+    }
 
     window.requestAnimationFrame(() => draw(canvas, ctx));
   };
@@ -151,9 +167,8 @@ export function Vortex(props: VortexProps) {
     radius = particleProps[i8];
     hue = particleProps[i9];
 
-
     // Repulsion logic
-    const mouseRadius = isMouseDown.current ? 150 : 100; 
+    const mouseRadius = isMouseDown.current ? 150 : 100;
     const mouseX = mouseCoords.current.x;
     const mouseY = mouseCoords.current.y;
 
@@ -182,17 +197,17 @@ export function Vortex(props: VortexProps) {
           const sinAngle = Math.sin(angle + spinStrength);
 
           const newVx = -dy * repulsionStrength * spinStrength; // Perpendicular to the radius
-          const newVy = dx * repulsionStrength * spinStrength;  // Perpendicular to the radius
+          const newVy = dx * repulsionStrength * spinStrength; // Perpendicular to the radius
 
           vx += newVx;
           vy += newVy;
         }
       }
     }
-    // 
+    //
 
     // drawParticle(x, y, x2, y2, life, ttl, radius*1, hue, ctx);
-    drawParticle(x, y, x2, y2, life, ttl, radius*1.2, hue, ctx);
+    drawParticle(x, y, x2, y2, life, ttl, radius * 1.2, hue, ctx);
 
     life++;
 
@@ -296,7 +311,7 @@ export function Vortex(props: VortexProps) {
     const handleMouseDown = () => {
       isMouseDown.current = true;
     };
-  
+
     const handleMouseUp = () => {
       isMouseDown.current = false;
     };
@@ -321,4 +336,4 @@ export function Vortex(props: VortexProps) {
       </div>
     </div>
   );
-};
+}

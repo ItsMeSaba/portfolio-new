@@ -1,4 +1,4 @@
-import { TechnologyIcon } from "@/components/elements/technology-icon/TechnologyIcon";
+import { TechnologyIcon } from "@/components/elements/technology-icon/technology-icon";
 
 const SLIDE_SIZE = 40;
 
@@ -43,12 +43,7 @@ export const technologySlides = [
   },
   {
     icon: (
-      <TechnologyIcon
-        name="vercel"
-        width={SLIDE_SIZE}
-        height={SLIDE_SIZE}
-        className="invert"
-      />
+      <TechnologyIcon name="vercel" width={SLIDE_SIZE} height={SLIDE_SIZE} />
     ),
   },
   {

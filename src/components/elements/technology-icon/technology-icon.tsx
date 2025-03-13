@@ -10,7 +10,10 @@ import Vercel from "@/assets/svg/technologies/vercel.svg";
 import Contentful from "@/assets/svg/technologies/contentful.svg";
 import Storyblok from "@/assets/svg/technologies/storyblok.svg";
 import Strapi from "@/assets/svg/technologies/strapi.svg";
-
+import Nuxtjs from "@/assets/svg/technologies/nuxtjs.svg";
+import Vue from "@/assets/svg/technologies/vue.svg";
+import Cursor from "@/assets/svg/technologies/cursor.svg";
+import Chatgpt from "@/assets/svg/technologies/chatgpt.svg";
 const icons = {
   javascript: Javascript,
   typescript: Typescript,
@@ -24,7 +27,11 @@ const icons = {
   contentful: Contentful,
   storyblok: Storyblok,
   strapi: Strapi,
-}
+  nuxtjs: Nuxtjs,
+  vue: Vue,
+  cursor: Cursor,
+  chatgpt: Chatgpt,
+};
 
 interface Props {
   name: keyof typeof icons;
@@ -35,10 +42,12 @@ interface Props {
 
 export function TechnologyIcon({ name, className, width, height }: Props) {
   const Icon = icons[name];
-  
+
+  if (!Icon) return null;
+
   return (
-    <div className="relative">
+    <div className="relative" title={name}>
       <Icon width={width || 35} height={height || 35} className={className} />
     </div>
-  )
+  );
 }

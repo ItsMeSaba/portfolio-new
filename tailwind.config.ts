@@ -32,7 +32,8 @@ export default {
     },
     container: {
       center: true,
-    }
+      padding: "2rem",
+    },
   },
   plugins: [addVariablesForColors],
 } satisfies Config;

@@ -1,4 +1,4 @@
-import { TechnologyIcon } from "@/components/elements/technology-icon/TechnologyIcon";
+import { TechnologyIcon } from "@/components/elements/technology-icon/technology-icon";
 import Image from "next/image";
 import BejamasLogo from "@/assets/img/bejamas-logo-2.png";
 import UnisoftLogo from "@/assets/img/unisoft-logo-2.png";
@@ -44,8 +44,8 @@ export const experienceData = [
           <div className="flex gap-6 flex-wrap">
             <TechnologyIcon name="javascript" />
             <TechnologyIcon name="typescript" />
-            <TechnologyIcon name="nextjs" className="invert" />
-            <TechnologyIcon name="vercel" className="invert" />
+            <TechnologyIcon name="nextjs" />
+            <TechnologyIcon name="vercel" />
             <TechnologyIcon name="netlify" />
             <TechnologyIcon name="contentful" />
             <TechnologyIcon name="storyblok" />
