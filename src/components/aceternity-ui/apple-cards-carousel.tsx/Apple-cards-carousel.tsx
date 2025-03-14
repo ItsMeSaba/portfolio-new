@@ -100,13 +100,13 @@ export const AppleCarousel = ({
         <div className="flex flex-col md:flex-row justify-between items-start gap-4 md:items-center">
           {title && (
             <div className="flex flex-row justify-start gap-4 md:pl-4">
-              <h2 className="text-3xl font-semibold">{title}</h2>
+              <h2 className="text-xl md:text-3xl font-semibold">{title}</h2>
             </div>
           )}
 
           <div className="flex justify-end gap-2 mr-10">
             <button
-              className="relative text-black font-extrabold z-40 h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
+              className="relative text-black font-extrabold z-40 h-8 w-8 md:h-10 md:w-10 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
               onClick={scrollLeft}
               disabled={!canScrollLeft}
             >
@@ -114,7 +114,7 @@ export const AppleCarousel = ({
               {"<"}
             </button>
             <button
-              className="relative text-black font-extrabold z-40 h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
+              className="relative text-black font-extrabold z-40 h-8 w-8 md:h-10 md:w-10 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
               onClick={scrollRight}
               disabled={!canScrollRight}
             >
@@ -137,7 +137,7 @@ export const AppleCarousel = ({
 
           <div
             className={cn(
-              "flex flex-row justify-start gap-4 pl-4",
+              "flex flex-row justify-start gap-4 md:pl-4",
               // "max-w-7xl mx-auto" // remove max-w-4xl if you want the carousel to span the full width of its container
               "mx-auto" // remove max-w-4xl if you want the carousel to span the full width of its container
             )}
@@ -261,7 +261,7 @@ export const Card = ({
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className="rounded-3xl bg-gray-100 dark:bg-neutral-900 h-[300px] w-[450px] md:h-[30rem] 2xl:h-[40rem] 2xl:w-[600px] overflow-hidden flex flex-col items-start justify-start relative z-10"
+        className="rounded-3xl bg-gray-100 dark:bg-neutral-900 h-[300px] w-[450px] md:h-[30rem] 2xl:h-[35rem] 2xl:w-[600px] overflow-hidden flex flex-col items-start justify-start relative z-10"
       >
         <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
         <div className="relative z-40 p-8">

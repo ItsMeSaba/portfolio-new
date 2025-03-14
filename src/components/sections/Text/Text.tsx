@@ -13,7 +13,7 @@ export function Text({ words, textClassName, className, id }: Props) {
     <div
       id={id}
       className={clsx(
-        "my-24 md:min-h-[600px] container flex items-center text-balance",
+        "my-12 py-12 md:min-h-[200px] container flex items-center text-balance",
         className
       )}
     >

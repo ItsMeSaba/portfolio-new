@@ -22,7 +22,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="min-h-[90vh] md:min-h-screen relative select-none flex items-center">
+    <section className="min-h-[600px] md:min-h-[100dvh] relative select-none flex items-center">
       {isMobile === true && (
         <Vortex
           rangeY={250}
@@ -31,7 +31,7 @@ export function Hero() {
           rangeRadius={1}
         />
       )}
-      {isMobile === false && <Vortex rangeY={200} particleCount={1000} />}
+      {isMobile === false && <Vortex rangeY={150} particleCount={700} />}
 
       <div className="relative z-10 flex items-center justify-center w-full h-full">
         <div className="flex flex-col gap-1">

@@ -289,13 +289,15 @@ export function Vortex(props: VortexProps) {
 
   useEffect(() => {
     setup();
-    window.addEventListener("resize", () => {
-      const canvas = canvasRef.current;
-      const ctx = canvas?.getContext("2d");
-      if (canvas && ctx) {
-        resize(canvas, ctx);
-      }
-    });
+
+    // Disabled for now, causes layout shift on mobile when search bar gets hidden
+    // window.addEventListener("resize", () => {
+    //   const canvas = canvasRef.current;
+    //   const ctx = canvas?.getContext("2d");
+    //   if (canvas && ctx) {
+    //     resize(canvas, ctx);
+    //   }
+    // });
 
     window.addEventListener("mousemove", (e) => {
       const canvasDimensions = canvasRef.current?.getBoundingClientRect();

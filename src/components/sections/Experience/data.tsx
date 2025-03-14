@@ -39,6 +39,8 @@ export const experienceData = [
               Communicating with different clients and understanding their needs
             </li>
             <li>Improving website performance to pass CWV</li>
+            <li>Improving website Accessibility</li>
+            <li>Improving website SEO</li>
           </ul>
 
           <div className="flex gap-6 flex-wrap">

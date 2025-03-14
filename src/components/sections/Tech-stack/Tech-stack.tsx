@@ -4,7 +4,7 @@ import { TechnologyIcon } from "@/components/elements/technology-icon/technology
 
 export function TechStack() {
   return (
-    <section className="container max-w-screen-xl my-24 md:my-40">
+    <section className="container max-w-screen-xl my-12 py-12 md:my-20 md:py-20">
       <div className="flex flex-col gap-4">
         <h2 className="text-4xl font-bold">Tech Stack</h2>
 
