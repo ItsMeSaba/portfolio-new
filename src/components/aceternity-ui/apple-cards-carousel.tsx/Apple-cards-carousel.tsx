@@ -65,13 +65,27 @@ export const AppleCarousel = ({
 
   const scrollLeft = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: -620, behavior: "smooth" });
+      const firstCard = document.getElementById("apple-card-0");
+      const cardWidth = firstCard?.offsetWidth ?? 620;
+      const GAP = 16;
+
+      carouselRef.current.scrollBy({
+        left: -cardWidth - GAP,
+        behavior: "smooth",
+      });
     }
   };
 
   const scrollRight = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: 620, behavior: "smooth" });
+      const lastCard = document.getElementById("apple-card-0");
+      const cardWidth = lastCard?.offsetWidth ?? 620;
+      const GAP = 16;
+
+      carouselRef.current.scrollBy({
+        left: cardWidth + GAP,
+        behavior: "smooth",
+      });
     }
   };
 
@@ -159,6 +173,7 @@ export const AppleCarousel = ({
                   },
                 }}
                 key={"card" + index}
+                id={`apple-card-${index}`}
                 className="last:pr-[5%] md:last:pr-[33%]  rounded-3xl"
               >
                 {item}
@@ -211,7 +226,7 @@ export const Card = ({
 
   const handleClose = () => {
     setOpen(false);
-    onCardClose(index);
+    // onCardClose(index);
   };
 
   return (
@@ -261,7 +276,7 @@ export const Card = ({
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className="rounded-3xl bg-gray-100 dark:bg-neutral-900 h-[300px] w-[450px] md:h-[30rem] 2xl:h-[35rem] 2xl:w-[600px] overflow-hidden flex flex-col items-start justify-start relative z-10"
+        className="rounded-3xl bg-gray-100 dark:bg-neutral-900 h-[400px] w-[350px] md:h-[30rem] 2xl:h-[35rem] 2xl:w-[600px] overflow-hidden flex flex-col items-start justify-start relative z-10"
       >
         <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
         <div className="relative z-40 p-8">
