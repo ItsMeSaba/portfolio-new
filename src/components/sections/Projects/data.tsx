@@ -4,6 +4,7 @@ import Alpro from "@/assets/img/projects/alpro-mockup.png";
 import AlproHealthcare from "@/assets/img/projects/alpro-healthcare-mockup.png";
 import AlproFoundation from "@/assets/img/projects/alpro-foundation-mockup.png";
 import Seawatch from "@/assets/img/projects/seawatch-mockup.png";
+import ClimateCentral from "@/assets/img/projects/climate-central-mockup.png";
 
 export const projectsData = [
   {
@@ -22,6 +23,12 @@ export const projectsData = [
     category: "Products",
     title: "Alpro",
     src: Alpro.src,
+    content: <></>,
+  },
+  {
+    category: "Climate",
+    title: "Climate Central",
+    src: ClimateCentral.src,
     content: <></>,
   },
   {
