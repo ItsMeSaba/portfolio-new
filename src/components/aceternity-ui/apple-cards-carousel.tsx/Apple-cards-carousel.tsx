@@ -16,7 +16,7 @@ import { cn } from "@/components/aceternity-ui/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import Image, { ImageProps } from "next/image";
 import { useOutsideClick } from "@/base/hooks/use-outside-click";
-
+import { FlagIcon, Flag } from "@/components/elements/flag-icon/flag-icon";
 interface CarouselProps {
   items: JSX.Element[];
   initialScroll?: number;
@@ -27,6 +27,7 @@ type Card = {
   src: string;
   title: string;
   category: string;
+  flag?: Flag;
   content: React.ReactNode;
 };
 
@@ -280,12 +281,17 @@ export const Card = ({
       >
         <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
         <div className="relative z-40 p-8">
-          <motion.p
-            layoutId={layout ? `category-${card.category}` : undefined}
-            className="text-white text-sm md:text-base font-medium font-sans text-left"
-          >
-            {card.category}
-          </motion.p>
+          <div className="flex flex-row items-center gap-2">
+            <motion.p
+              layoutId={layout ? `category-${card.category}` : undefined}
+              className="text-white text-sm md:text-base font-medium font-sans text-left"
+            >
+              {card.category}
+            </motion.p>
+
+            {card.flag && <FlagIcon country={card.flag} />}
+          </div>
+
           <motion.p
             layoutId={layout ? `title-${card.title}` : undefined}
             className="text-white text-xl md:text-3xl font-semibold max-w-xs text-left [text-wrap:balance] font-sans mt-2"
