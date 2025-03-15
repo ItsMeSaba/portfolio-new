@@ -3,7 +3,7 @@ import { Text } from "@/components/sections/text/Text";
 import { Experience } from "@/components/sections/experience/Experience";
 import { Projects } from "@/components/sections/projects/Projects";
 import { Socials } from "@/components/sections/socials/Socials";
-import { TechStack } from "@/components/sections/tech-stack/Tech-stack";
+import { TechStack } from "@/components/sections/tech-stack/TechStack";
 
 export default function Home() {
   return (
