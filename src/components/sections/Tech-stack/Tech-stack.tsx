@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { techStack } from "./data";
 import { TechnologyIcon } from "@/components/elements/technology-icon/technology-icon";
 
@@ -14,7 +13,7 @@ export function TechStack() {
           I've used:
         </p>
 
-        <div className="flex flex-col gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {techStack.map((stack) => (
             <div key={stack.title} className="flex flex-col gap-2">
               <h3 className="text-lg font-bold mb-2">{stack.title}</h3>
