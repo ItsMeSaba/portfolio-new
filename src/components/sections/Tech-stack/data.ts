@@ -1,4 +1,12 @@
-export const techStack = [
+
+interface TechStack {
+  title: string;
+  items: {
+    name: string;
+    icon: string;
+  }[];
+}
+export const techStack: TechStack[] = [
   {
     title: "Front End",
     items: [

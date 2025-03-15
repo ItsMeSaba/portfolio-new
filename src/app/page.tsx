@@ -1,9 +1,9 @@
-import { Hero } from "@/components/sections/Hero/Hero";
-import { Text } from "@/components/sections/Text/Text";
-import { Experience } from "@/components/sections/Experience/Experience";
-import { Projects } from "@/components/sections/Projects/Projects";
-import { Socials } from "@/components/sections/Socials/Socials";
-import { TechStack } from "@/components/sections/Tech-stack/Tech-stack";
+import { Hero } from "@/components/sections/hero/Hero";
+import { Text } from "@/components/sections/text/Text";
+import { Experience } from "@/components/sections/experience/Experience";
+import { Projects } from "@/components/sections/projects/Projects";
+import { Socials } from "@/components/sections/socials/Socials";
+import { TechStack } from "@/components/sections/tech-stack/Tech-stack";
 
 export default function Home() {
   return (

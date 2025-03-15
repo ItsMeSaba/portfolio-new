@@ -3,7 +3,11 @@ import Linkedin from "@/assets/svg/linkedin.svg";
 import Github from "@/assets/svg/github.svg";
 import Link from "next/link";
 
-export function Socials({ id }: any) {
+interface Props {
+  id?: string;
+}
+
+export function Socials({ id }: Props) {
   return (
     <div
       id={id}
@@ -13,15 +17,15 @@ export function Socials({ id }: any) {
         target="_blank"
         href="https://www.linkedin.com/in/saba-silagadze-8164a31b0/"
       >
-        <Linkedin className="w-48" />
+        <Linkedin className="w-32 md:w-44" />
       </Link>
 
       <Link target="_blank" href="mailto:sbsilagadze@gmail.com">
-        <Gmail className="w-48" />
+        <Gmail className="w-32 md:w-44" />
       </Link>
 
       <Link target="_blank" href="https://github.com/ItsMeSaba">
-        <Github className="w-48" />
+        <Github className="w-32 md:w-44" />
       </Link>
     </div>
   );

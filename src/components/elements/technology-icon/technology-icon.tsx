@@ -14,6 +14,7 @@ import Nuxtjs from "@/assets/svg/technologies/nuxtjs.svg";
 import Vue from "@/assets/svg/technologies/vue.svg";
 import Cursor from "@/assets/svg/technologies/cursor.svg";
 import Chatgpt from "@/assets/svg/technologies/chatgpt.svg";
+
 const icons = {
   javascript: Javascript,
   typescript: Typescript,

@@ -8,7 +8,6 @@ export function Hero() {
 
   useEffect(() => {
     const handleResize = () => {
-      console.log("window.innerWidth", window.innerWidth);
       setIsMobile(window.innerWidth < 768);
     };
 
@@ -31,6 +30,7 @@ export function Hero() {
           rangeRadius={1}
         />
       )}
+
       {isMobile === false && <Vortex rangeY={150} particleCount={800} />}
 
       <div className="absolute inset-0 bg-black/5 backdrop-blur-[2px] z-[10]" />

@@ -6,7 +6,14 @@ import AlproFoundation from "@/assets/img/projects/alpro-foundation-mockup.png";
 import Seawatch from "@/assets/img/projects/seawatch-mockup.png";
 import ClimateCentral from "@/assets/img/projects/climate-central-mockup.png";
 
-export const projectsData = [
+interface Project {
+  category: string;
+  title: string;
+  src: string;
+  content: React.ReactNode;
+}
+
+export const projectsData: Project[] = [
   {
     category: "British Taxi Service",
     title: "Veezu",

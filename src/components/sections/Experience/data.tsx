@@ -3,7 +3,12 @@ import Image from "next/image";
 import BejamasLogo from "@/assets/img/bejamas-logo-2.png";
 import UnisoftLogo from "@/assets/img/unisoft-logo-2.png";
 
-export const experienceData = [
+interface Experience {
+  title: string;
+  content: React.ReactNode;
+}
+
+export const experienceData: Experience[] = [
   {
     title: "2022-Present",
     content: (
@@ -47,11 +52,12 @@ export const experienceData = [
             <TechnologyIcon name="javascript" />
             <TechnologyIcon name="typescript" />
             <TechnologyIcon name="nextjs" />
-            <TechnologyIcon name="vercel" />
-            <TechnologyIcon name="netlify" />
+            <TechnologyIcon name="nuxtjs" />
             <TechnologyIcon name="contentful" />
             <TechnologyIcon name="storyblok" />
             <TechnologyIcon name="strapi" />
+            <TechnologyIcon name="netlify" />
+            <TechnologyIcon name="vercel" />
           </div>
         </div>
       </div>
