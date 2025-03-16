@@ -277,7 +277,7 @@ export const Card = ({
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         // onClick={handleOpen}
-        className="rounded-3xl bg-gray-100 dark:bg-neutral-900 h-[400px] w-[300px] md:h-[30rem] 2xl:h-[35rem] 2xl:w-[600px] overflow-hidden flex flex-col items-start justify-start relative z-10"
+        className="rounded-3xl bg-gray-100 dark:bg-neutral-900 h-[400px] w-[300px] md:w-[375px] md:h-[30rem] 2xl:h-[35rem] 2xl:w-[450px] overflow-hidden flex flex-col items-start justify-start relative z-10"
       >
         <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
         <div className="relative z-40 p-4 md:p-8">
@@ -299,6 +299,7 @@ export const Card = ({
             {card.title}
           </motion.p>
         </div>
+
         <BlurImage
           src={card.src}
           alt={card.title}
