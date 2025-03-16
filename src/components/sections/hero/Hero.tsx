@@ -1,24 +1,10 @@
 "use client";
 
 import { Vortex } from "@/components/aceternity-ui/vortex/Vortex";
-import { useState, useEffect } from "react";
+import { useIsMobile } from "@/base/hooks/use-is-mobile";
 
 export function Hero() {
-  const [isMobile, setIsMobile] = useState<boolean | null>(null);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    handleResize();
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const isMobile = useIsMobile();
 
   return (
     <section className="min-h-[600px] md:min-h-[100dvh] relative select-none flex items-center">

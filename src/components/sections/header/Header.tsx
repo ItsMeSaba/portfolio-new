@@ -3,14 +3,8 @@
 import { ButtonWithAnimatedBorder } from "@/components/elements/buttons/button-with-animated-border";
 import { navLinks } from "./data";
 import { useEffect, useState } from "react";
+import { scrollToSection } from "@/base/utils/scroll-to-section";
 import clsx from "clsx";
-
-function scrollToSection(href: string, align: ScrollLogicalPosition) {
-  document.getElementById(href)?.scrollIntoView({
-    behavior: "smooth",
-    block: align,
-  });
-}
 
 export function Header() {
   const [isVisible, setIsVisible] = useState(false);
