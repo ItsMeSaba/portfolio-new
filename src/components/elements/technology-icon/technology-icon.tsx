@@ -14,6 +14,9 @@ import Nuxtjs from "@/assets/svg/technologies/nuxtjs.svg";
 import Vue from "@/assets/svg/technologies/vue.svg";
 import Cursor from "@/assets/svg/technologies/cursor.svg";
 import Chatgpt from "@/assets/svg/technologies/chatgpt.svg";
+import Figma from "@/assets/svg/technologies/figma.svg";
+import Jira from "@/assets/svg/technologies/jira.svg";
+import Linear from "@/assets/svg/technologies/linear.svg";
 
 const icons = {
   javascript: Javascript,
@@ -32,6 +35,9 @@ const icons = {
   vue: Vue,
   cursor: Cursor,
   chatgpt: Chatgpt,
+  figma: Figma,
+  jira: Jira,
+  linear: Linear,
 };
 
 interface Props {

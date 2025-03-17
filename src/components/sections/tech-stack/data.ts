@@ -96,4 +96,21 @@ export const techStack: TechStack[] = [
       },
     ],
   },
+  {
+    title: "Tools",
+    items: [
+      {
+        name: "Jira",
+        icon: "jira",
+      },
+      {
+        name: "Linear",
+        icon: "linear",
+      },
+      {
+        name: "Figma",
+        icon: "figma",
+      },      
+    ],
+  },
 ];
