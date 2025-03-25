@@ -4,7 +4,7 @@ import { Experience } from "@/components/sections/experience/Experience";
 import { Projects } from "@/components/sections/projects/Projects";
 import { Socials } from "@/components/sections/socials/Socials";
 import { TechStack } from "@/components/sections/tech-stack/TechStack";
-
+import { LinkedinRecommendations } from "@/components/sections/linkedin-recommendations/LinkedinRecommendations";
 export default function Home() {
   return (
     <div className="min-h-screen relative font-[family-name:var(--font-geist-sans)]">
@@ -20,6 +20,8 @@ export default function Home() {
         <Experience id="experience" />
 
         <Projects id="projects" />
+
+        <LinkedinRecommendations />
 
         <TechStack />
 
