@@ -1,9 +1,9 @@
 "use client";
 
 import { ButtonWithAnimatedBorder } from "@/components/elements/buttons/button-with-animated-border";
-import { navLinks } from "./data";
 import { useEffect, useState } from "react";
 import { scrollToSection } from "@/base/utils/scroll-to-section";
+import { Navigation } from "./Navigation";
 import clsx from "clsx";
 
 export function Header() {
@@ -29,17 +29,7 @@ export function Header() {
       <div className="grid grid-cols-[1fr_3fr_1fr] items-center justify-center mx-auto w-full max-w-[1000px]">
         <p className="font-semibold text-2xl md:text-3xl">S</p>
 
-        <nav className="hidden md:block transperancy bg-gray-900/10 py-4 border-white/10 border-2 px-10 rounded-full w-fit mx-auto">
-          <ul className="flex items-center justify-center gap-10 font-semibold">
-            {navLinks.map(({ href, label, align }) => (
-              <li key={href}>
-                <button onClick={() => scrollToSection(href, align)}>
-                  {label}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <Navigation />
 
         <ButtonWithAnimatedBorder
           label="Contact Me"
