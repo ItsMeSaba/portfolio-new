@@ -11,7 +11,7 @@ export function LinkedinRecommendations() {
   const rightColumnRecommendations = linkedinRecommendations.slice(halfLength);
 
   return (
-    <section className="container my-12 py-12 md:my-20 md:py-20">
+    <section className="container max-w-screen-xl px-5 md:px-8 my-12 py-12 md:my-20 md:py-20">
       <div className="flex items-center gap-2 md:gap-4 mb-8 md:mb-12">
         <Linkedin className="w-9 h-9 md:w-12 md:h-12" />
         <h2 className="text-2xl md:text-4xl font-bold">Recommendations</h2>

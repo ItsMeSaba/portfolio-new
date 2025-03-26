@@ -9,7 +9,7 @@ export function Recommendation({
   label,
 }: LinkedinRecommendation) {
   return (
-    <div className="flex flex-col gap-4 bg-gray-950 p-6 rounded-lg h-fit min-w-[250px] max-w-[750px]">
+    <div className="flex flex-col gap-4 bg-blue-950/25 border-blue-950/55 border-2 p-5 md:p-6 rounded-lg h-fit min-w-[250px] max-w-[750px]">
       <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
         <Image
           src={image}
