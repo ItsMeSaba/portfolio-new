@@ -3,6 +3,7 @@ export interface LinkedinRecommendation {
   position: string;
   label: string;
   image: string;
+  isGold?: boolean;
   recommendation: string;
 }
 
@@ -20,6 +21,7 @@ export const linkedinRecommendations: LinkedinRecommendation[] = [
     name: "Wiktoria Szott",
     position: "Recruitment | People & Culture | HR | | EB | IT",
     label: "March 25, 2025, Wiktoria worked with Saba on the same team",
+    isGold: true,
     image:
       "https://media.licdn.com/dms/image/v2/D4D03AQGVD5dzEfxPXg/profile-displayphoto-shrink_100_100/B4DZVEAgMpGcAY-/0/1740602738073?e=1748476800&v=beta&t=IdqU66WIY35bQowCtf5yFgReOBorZUfsTHRcfio4Wi8",
     recommendation:
