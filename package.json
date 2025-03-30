@@ -16,6 +16,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-intersection-observer": "^9.14.0",
+    "resend": "^4.2.0",
     "simplex-noise": "^4.0.3",
     "tailwind-merge": "^2.6.0"
   },
@@ -32,5 +33,6 @@
     "tailwindcss": "^3.4.1",
     "typescript": "^5",
     "url-loader": "^4.1.1"
-  }
+  },
+  "packageManager": "yarn@4.3.0+sha512.1606bef7c84bc7d83b8576063de2fd08f7d69f9939015bed800f9585a002390268ecc777e9feeba7e26e9556aef6beaad4806968db2182ab5dd3e955ab3b9a0b"
 }

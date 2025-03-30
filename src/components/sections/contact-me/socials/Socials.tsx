@@ -1,19 +1,21 @@
 import Link from "next/link";
 import { socialsData } from "./data";
+import { cn } from "@/components/aceternity-ui/lib/utils";
 
 interface Props {
   id?: string;
+  className?: string;
 }
 
-export function Socials({ id }: Props) {
+export function Socials({ id, className }: Props) {
   return (
     <div
       id={id}
-      className="flex flex-col md:flex-row relative items-center justify-center gap-5 md:gap-24 space-x-4 py-10 h-[800px] max-h-[95vh]"
+      className={cn("flex flex-row gap-6 justify-start w-fit", className)}
     >
       {socialsData.map(({ href, Icon }) => (
         <Link key={href} target="_blank" href={href}>
-          <Icon className="w-32 md:w-44" />
+          <Icon className="w-24 md:w-10" />
         </Link>
       ))}
     </div>
