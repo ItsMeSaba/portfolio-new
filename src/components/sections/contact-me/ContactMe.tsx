@@ -1,5 +1,4 @@
 import { Form } from "./Form";
-import { Socials } from "./socials/Socials";
 
 interface Props {
   id?: string;
@@ -15,8 +14,6 @@ export function ContactMe({ id }: Props) {
 
       <div className="">
         <Form />
-
-        {/* <Socials className="-translate-y-full" /> */}
       </div>
     </div>
   );
