@@ -46,6 +46,7 @@ export const experienceData: Experience[] = [
             <li>Improving website performance to pass CWV</li>
             <li>Improving website Accessibility</li>
             <li>Improving website SEO</li>
+            <li>Creating Documentations</li>
           </ul>
 
           <div className="flex gap-6 flex-wrap">
