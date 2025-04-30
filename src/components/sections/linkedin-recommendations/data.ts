@@ -27,4 +27,13 @@ export const linkedinRecommendations: LinkedinRecommendation[] = [
     recommendation:
       "Saba and I had the chance to work together as part of a team at Bejamas. He consistently showed a strong commitment to both personal growth and the success of the team, always ready to jump in whenever a challenge arose. Saba’s contributions were deeply appreciated and played a huge role in building a positive team spirit. :)",
   },
+  {
+    name: "Aleksandra Gontarz",
+    position: "Software Tester | QA Engineer | Accessibility Enthusiast",
+    label: "April 29, 2025, Aleksandra worked with Saba on the same team",
+    image:
+      "https://media.licdn.com/dms/image/v2/C5603AQEbU_1cOb31LQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1563102445369?e=1751500800&v=beta&t=gKQ3oZSyXT2l2PBUN-h_TyZeBIn0E9FJS3hzMPwyg5k",
+    recommendation:
+      "Working with Saba as a QA Engineer was a real pleasure. He’s a developer who truly cares about the quality of his work and pays attention to details that matter. Whenever an issue came up, he was always open to feedback and quick to collaborate on finding the best solution. His helpfulness, patience, and focus on getting things right made my job easier and our teamwork smooth. I’d be happy to work with him again on any project.",
+  },
 ];
