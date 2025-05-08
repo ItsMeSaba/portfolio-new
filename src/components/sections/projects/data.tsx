@@ -7,6 +7,14 @@ import Seawatch from "@/assets/img/projects/seawatch-mockup.png";
 import ClimateCentral from "@/assets/img/projects/climate-central-mockup.png";
 import { Flag } from "@/components/elements/flag-icon/flag-icon";
 
+import VeezuLogo from "@/assets/img/project-logos/veezu-logo.png";
+import CaminoLogo from "@/assets/img/project-logos/camino-logo.png";
+import AlproLogo from "@/assets/img/project-logos/alpro-logo.png";
+import ClimateCentralLogo from "@/assets/img/project-logos/cc-logo.png";
+import AlproHealthcareLogo from "@/assets/img/project-logos/alpro-healthcare-logo.png";
+import AlproFoundationLogo from "@/assets/img/project-logos/alpro-foundation-logo.png";
+import SeawatchLogo from "@/assets/img/project-logos/seawatch-logo.png";
+
 interface Project {
   category: string;
   title: string;
@@ -20,49 +28,50 @@ export const projectsData: Project[] = [
     category: "Taxi Service",
     title: "Veezu",
     flag: "greatBritain",
-    src: Veezu.src,
+    // src: Veezu.src,
+    src: VeezuLogo.src,
     content: <></>,
   },
   {
     category: "Loan agency",
     title: "Camino",
     flag: "unitedStates",
-    src: Camino.src,
+    src: CaminoLogo.src,
     content: <></>,
   },
   {
     category: "Products",
     title: "Alpro",
     flag: "belgium",
-    src: Alpro.src,
+    src: AlproLogo.src,
     content: <></>,
   },
   {
     category: "NGO",
     title: "Climate Central",
     flag: "unitedStates",
-    src: ClimateCentral.src,
+    src: ClimateCentralLogo.src,
     content: <></>,
   },
   {
     category: "Informational Blog",
     title: "Alpro Healthcare Professionals",
     flag: "belgium",
-    src: AlproHealthcare.src,
+    src: AlproHealthcareLogo.src,
     content: <></>,
   },
   {
     category: "Informational Blog",
     title: "Alpro Foundation",
     flag: "belgium",
-    src: AlproFoundation.src,
+    src: AlproFoundationLogo.src,
     content: <></>,
   },
   {
     category: "NGO",
     title: "Seawatch",
     flag: "germany",
-    src: Seawatch.src,
+    src: SeawatchLogo.src,
     content: <></>,
   },
 ];
