@@ -11,7 +11,7 @@ interface Props {
 export function Projects({ id }: Props) {
   return (
     <div
-      className="container my-12 py-12 md:my-20 md:py-20 flex flex-col justify-center"
+      className="my-12 py-12 md:my-20 md:py-20 flex flex-col justify-center"
       id={id}
     >
       <AppleCarousel
