@@ -14,6 +14,8 @@ import ClimateCentralLogo from "@/assets/img/project-logos/cc-logo.png";
 import AlproHealthcareLogo from "@/assets/img/project-logos/alpro-healthcare-logo.png";
 import AlproFoundationLogo from "@/assets/img/project-logos/alpro-foundation-logo.png";
 import SeawatchLogo from "@/assets/img/project-logos/seawatch-logo.png";
+import DeeptrekkerLogo from "@/assets/img/project-logos/deeptrekker-logo.png";
+import MccLogo from "@/assets/img/project-logos/mcc-logo.png";
 
 interface Project {
   category: string;
@@ -72,6 +74,20 @@ export const projectsData: Project[] = [
     title: "Seawatch",
     flag: "germany",
     src: SeawatchLogo.src,
+    content: <></>,
+  },
+  {
+    category: "Informational Blog",
+    title: "Deeptrekker",
+    flag: "unitedStates",
+    src: DeeptrekkerLogo.src,
+    content: <></>,
+  },
+  {
+    category: "Informational Blog",
+    title: "Multicoin Capital",
+    flag: "unitedStates",
+    src: MccLogo.src,
     content: <></>,
   },
 ];
