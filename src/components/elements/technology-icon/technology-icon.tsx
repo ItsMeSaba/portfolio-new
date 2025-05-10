@@ -17,6 +17,7 @@ import Chatgpt from "@/assets/svg/technologies/chatgpt.svg";
 import Figma from "@/assets/svg/technologies/figma.svg";
 import Jira from "@/assets/svg/technologies/jira.svg";
 import Linear from "@/assets/svg/technologies/linear.svg";
+import Openai from "@/assets/svg/technologies/openai.svg";
 
 const icons = {
   javascript: Javascript,
@@ -38,6 +39,7 @@ const icons = {
   figma: Figma,
   jira: Jira,
   linear: Linear,
+  openai: Openai,
 };
 
 interface Props {

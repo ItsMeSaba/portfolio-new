@@ -1,4 +1,3 @@
-
 interface TechStack {
   title: string;
   items: {
@@ -94,6 +93,10 @@ export const techStack: TechStack[] = [
         name: "Cursor",
         icon: "cursor",
       },
+      {
+        name: "OpenAI",
+        icon: "openai",
+      },
     ],
   },
   {
@@ -110,7 +113,7 @@ export const techStack: TechStack[] = [
       {
         name: "Figma",
         icon: "figma",
-      },      
+      },
     ],
   },
 ];
