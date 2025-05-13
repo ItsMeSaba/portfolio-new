@@ -43,10 +43,6 @@ export const techStack: TechStack[] = [
         icon: "nodejs",
       },
       {
-        name: "Express",
-        icon: "express",
-      },
-      {
         name: "Nestjs",
         icon: "nestjs",
       },

@@ -42,20 +42,26 @@ const icons = {
   openai: Openai,
 };
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
   name: keyof typeof icons;
   className?: string;
   width?: number;
   height?: number;
 }
 
-export function TechnologyIcon({ name, className, width, height }: Props) {
+export function TechnologyIcon({
+  name,
+  className,
+  width,
+  height,
+  ...rest
+}: Props) {
   const Icon = icons[name];
 
   if (!Icon) return null;
 
   return (
-    <div className="relative" title={name}>
+    <div className="relative" title={name} {...rest}>
       <Icon width={width || 35} height={height || 35} className={className} />
     </div>
   );

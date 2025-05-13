@@ -1,3 +1,5 @@
+// Deprecated, can be removed in future
+
 import { TechnologyIcon } from "@/components/elements/technology-icon/technology-icon";
 import { techStack } from "./data";
 
