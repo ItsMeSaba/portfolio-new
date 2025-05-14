@@ -11,9 +11,11 @@ export function TechStackIcons({ setActiveItem }: Props) {
   return (
     <div className="flex flex-wrap gap-x-5 gap-y-4 md:gap-x-9 md:gap-y-6">
       {allTechItems.map((item) => (
-        <div className="relative border-[1px] border-transparent p-2 group hover:border-gray-400 rounded-md">
+        <div
+          key={item.name}
+          className="relative border-[1px] border-transparent p-2 group hover:border-gray-400 rounded-md"
+        >
           <TechnologyIcon
-            key={item.name}
             name={item.icon as any}
             width={40}
             height={40}
