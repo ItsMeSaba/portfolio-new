@@ -13,14 +13,10 @@ export function TechStackIcons({ setActiveItem }: Props) {
       {allTechItems.map((item) => (
         <div
           key={item.name}
-          className="relative border-[1px] border-transparent p-2 group hover:border-gray-400 rounded-md"
+          className="relative border-2 border-transparent p-2 group hover:border-gray-400 rounded-md transition-all duration-500"
+          onMouseEnter={() => setActiveItem(item.name)}
         >
-          <TechnologyIcon
-            name={item.icon as any}
-            width={40}
-            height={40}
-            onMouseEnter={() => setActiveItem(item.name)}
-          />
+          <TechnologyIcon name={item.icon as any} width={40} height={40} />
         </div>
       ))}
     </div>
