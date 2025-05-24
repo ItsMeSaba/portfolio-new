@@ -1,10 +1,3 @@
-import Veezu from "@/assets/img/projects/veezu-mockup-2.png";
-import Camino from "@/assets/img/projects/camino-mockup.png";
-import Alpro from "@/assets/img/projects/alpro-mockup.png";
-import AlproHealthcare from "@/assets/img/projects/alpro-healthcare-mockup.png";
-import AlproFoundation from "@/assets/img/projects/alpro-foundation-mockup.png";
-import Seawatch from "@/assets/img/projects/seawatch-mockup.png";
-import ClimateCentral from "@/assets/img/projects/climate-central-mockup.png";
 import { Flag } from "@/components/elements/flag-icon/flag-icon";
 
 import VeezuLogo from "@/assets/img/project-logos/veezu-logo.png";
