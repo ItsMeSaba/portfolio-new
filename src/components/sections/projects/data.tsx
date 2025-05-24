@@ -15,7 +15,8 @@ interface Project {
   title: string;
   flag?: Flag;
   src: string;
-  content: React.ReactNode;
+  content: React.ReactNode | null;
+  link?: string;
 }
 
 export const projectsData: Project[] = [
@@ -24,62 +25,70 @@ export const projectsData: Project[] = [
     title: "Veezu",
     flag: "greatBritain",
     src: VeezuLogo.src,
-    content: <></>,
+    content: null,
+    link: "https://veezu.co.uk/",
   },
   {
     category: "Financial Services",
     title: "Camino",
     flag: "unitedStates",
     src: CaminoLogo.src,
-    content: <></>,
+    content: null,
   },
   {
     category: "Plant-Based Products",
     title: "Alpro",
     flag: "belgium",
     src: AlproLogo.src,
-    content: <></>,
+    content: null,
+    link: "https://www.alpro.com/uk/",
   },
   {
     category: "Climate Science",
     title: "Climate Central",
     flag: "unitedStates",
     src: ClimateCentralLogo.src,
-    content: <></>,
+    content: null,
+    link: "https://www.climatecentral.org/",
   },
   {
     category: "Health & Nutrition Education",
     title: "Alpro Healthcare Professionals",
     flag: "belgium",
     src: AlproHealthcareLogo.src,
-    content: <></>,
+    content: null,
+    link: "https://alprohealthprofessional.com/",
   },
   {
     category: "Scientific Research & Knowledge Sharing",
     title: "Alpro Foundation",
     flag: "belgium",
     src: AlproFoundationLogo.src,
-    content: <></>,
+    content: null,
+    link: "https://www.alprofoundation.org/",
   },
   {
     category: "Humanitarian Search & Rescue",
     title: "Seawatch",
     flag: "germany",
     src: SeawatchLogo.src,
-    content: <></>,
+    content: null,
+    link: "https://seawatch.netlify.app/",
   },
   {
     category: "Industrial Robotics",
     title: "Deeptrekker",
     flag: "unitedStates",
     src: DeeptrekkerLogo.src,
-    content: <></>,
+    content: null,
+    link: "https://www.deeptrekker.com/",
   },
   {
     category: "Financial Services",
     title: "Multicoin Capital",
     flag: "unitedStates",
     src: MccLogo.src,
-    content: <></>,
+    content: null,
+    link: "https://www.multicoin.capital/",
   },
 ];
