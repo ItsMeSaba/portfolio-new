@@ -7,11 +7,6 @@ import React, {
   useContext,
   JSX,
 } from "react";
-// import {
-//   IconArrowNarrowLeft,
-//   IconArrowNarrowRight,
-//   IconX,
-// } from "@tabler/icons-react";
 import { cn } from "@/components/aceternity-ui/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import Image, { ImageProps } from "next/image";
@@ -29,6 +24,7 @@ type Card = {
   category: string;
   flag?: Flag;
   content: React.ReactNode;
+  link?: string;
 };
 
 export const CarouselContext = createContext<{
@@ -222,7 +218,11 @@ export const Card = ({
   );
 
   const handleOpen = () => {
-    setOpen(true);
+    if (card.content) {
+      setOpen(true);
+    } else if (card.link) {
+      window.open(card.link, "_blank");
+    }
   };
 
   const handleClose = () => {
@@ -250,10 +250,9 @@ export const Card = ({
               className="max-w-5xl mx-auto bg-white dark:bg-neutral-900 h-fit  z-[60] my-10 p-4 md:p-10 rounded-3xl font-sans relative"
             >
               <button
-                className="sticky top-4 h-8 w-8 right-0 ml-auto bg-black dark:bg-white rounded-full flex items-center justify-center"
+                className="sticky top-4 h-8 w-8 right-0 ml-auto bg-black dark:bg-white text-black rounded-full flex items-center justify-center"
                 onClick={handleClose}
               >
-                {/* <IconX className="h-6 w-6 text-neutral-100 dark:text-neutral-900" /> */}
                 X
               </button>
               <motion.p
@@ -276,7 +275,7 @@ export const Card = ({
 
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
-        // onClick={handleOpen}
+        onClick={handleOpen}
         className="rounded-3xl bg-gray-100 dark:bg-neutral-900 aspect-square w-[300px] md:w-[375px] 2xl:w-[450px] overflow-hidden flex flex-col items-start justify-start relative z-10"
       >
         <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
