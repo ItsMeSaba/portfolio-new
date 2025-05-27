@@ -2,21 +2,26 @@ import {
   AppleCarousel,
   Card,
 } from "@/components/aceternity-ui/apple-cards-carousel.tsx/Apple-cards-carousel";
-import { projectsData } from "./data";
 
 interface Props {
   id: string;
+  data: any[];
+  title?: string;
 }
 
-export function Projects({ id }: Props) {
+export function Projects({
+  id,
+  data,
+  title = "Projects I Contributed to",
+}: Props) {
   return (
     <div
       className="my-12 py-12 md:my-20 md:py-20 flex flex-col justify-center"
       id={id}
     >
       <AppleCarousel
-        title="Projects I Contributed to at Bejamas"
-        items={projectsData.map((project, index) => (
+        title={title}
+        items={data.map((project, index) => (
           <Card key={project.title} card={project} index={index} />
         ))}
       />

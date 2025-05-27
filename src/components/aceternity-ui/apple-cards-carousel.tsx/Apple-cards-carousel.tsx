@@ -302,6 +302,7 @@ export const Card = ({
         <BlurImage
           src={card.src}
           alt={card.title}
+          quality={100}
           fill
           // className="object-cover object-left-bottom absolute z-10 inset-0"
           className="object-cover object-center absolute z-10 inset-0"

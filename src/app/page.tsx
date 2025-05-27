@@ -5,6 +5,8 @@ import { Projects } from "@/components/sections/projects/Projects";
 import { TechStack } from "@/components/sections/tech-stack/TechStack";
 import { LinkedinRecommendations } from "@/components/sections/linkedin-recommendations/LinkedinRecommendations";
 import { ContactMe } from "@/components/sections/contact-me/ContactMe";
+import { bejamasProjects } from "@/components/sections/projects/bejamas-projects";
+import { personalProjects } from "@/components/sections/projects/personal-proejcts";
 
 export default function Home() {
   return (
@@ -20,7 +22,17 @@ export default function Home() {
 
         <Experience id="experience" />
 
-        <Projects id="projects" />
+        <Projects
+          id="bejamas-projects"
+          data={bejamasProjects}
+          title="Projects I Contributed to at Bejamas"
+        />
+
+        <Projects
+          id="personal-projects"
+          data={personalProjects}
+          title="Personal Projects"
+        />
 
         <LinkedinRecommendations />
 

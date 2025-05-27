@@ -10,7 +10,7 @@ import SeawatchLogo from "@/assets/img/project-logos/seawatch-logo.png";
 import DeeptrekkerLogo from "@/assets/img/project-logos/deeptrekker-logo.png";
 import MccLogo from "@/assets/img/project-logos/mcc-logo.png";
 
-interface Project {
+export interface Project {
   category: string;
   title: string;
   flag?: Flag;
@@ -19,7 +19,7 @@ interface Project {
   link?: string;
 }
 
-export const projectsData: Project[] = [
+export const bejamasProjects: Project[] = [
   {
     category: "Transportation Service",
     title: "Veezu",
