@@ -9,6 +9,15 @@ export interface LinkedinRecommendation {
 
 export const linkedinRecommendations: LinkedinRecommendation[] = [
   {
+    name: "Maciej Kozlowski",
+    position: "Engineering Manager at Backbase",
+    label: "May 26, 2025 Maciej managed Saba directly",
+    recommendation:
+      "I've had the pleasure of working with Saba, and I can confidently say he's one of those rare developers you can truly count on. He brings not only solid JS skills and modern web development expertise but also a fantastic attitude and an easygoing personality that makes collaboration smooth and enjoyable. <br /><br /> Saba is always ready to jump in and help — you can rely on him 100%. His willingness to learn, adapt quickly to new situations, and take on challenges is truly impressive. He also establishes strong relationships with customers, always keeping communication clear and professional. <br /><br /> What stands out the most is his extreme ownership — he treats every task as if it’s his own product, driving it to completion with care and accountability. <br /><br /> Any team would be lucky to have him onboard!",
+    image:
+      "https://media.licdn.com/dms/image/v2/C4D03AQEvavAs8fHdVw/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1573163036351?e=1753920000&v=beta&t=kSnkbOYypr2zUcaVsltW8s_Xpcs32D1INA-5M3tVtdA",
+  },
+  {
     name: "Wojciech Świderski",
     position: "QA Engineer in Handsontable",
     label: "January 31, 2025, Wojciech worked with Saba on the same team",

@@ -35,7 +35,10 @@ export function Recommendation({
           </div>
         </div>
 
-        <p className="text-[15px] leading-6 text-gray-200">{recommendation}</p>
+        <p
+          className="text-[15px] leading-6 text-gray-200"
+          dangerouslySetInnerHTML={{ __html: recommendation }}
+        />
       </div>
     </Link>
   );
