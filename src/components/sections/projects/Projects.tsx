@@ -1,7 +1,5 @@
-import {
-  AppleCarousel,
-  Card,
-} from "@/components/aceternity-ui/apple-cards-carousel.tsx/Apple-cards-carousel";
+import { AppleCarousel } from "@/components/aceternity-ui/apple-cards-carousel.tsx/Apple-cards-carousel";
+import { Card } from "@/components/aceternity-ui/apple-cards-carousel.tsx/Card";
 
 interface Props {
   id: string;
