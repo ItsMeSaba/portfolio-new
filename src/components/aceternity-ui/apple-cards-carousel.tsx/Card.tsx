@@ -27,7 +27,6 @@ type CardProps = {
 export const Card = ({ card, index, layout = false }: CardProps) => {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
-  const { onCardClose, currentIndex } = useContext(CarouselContext);
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -66,7 +65,10 @@ export const Card = ({ card, index, layout = false }: CardProps) => {
     <>
       <AnimatePresence>
         {open && (
-          <div className="fixed inset-0 h-screen z-[1000] overflow-hidden">
+          <div
+            id="project-popup" // used for preventing lenis on it as it breaks the scroll
+            className="fixed inset-0 h-screen z-[1000] overflow-hidden"
+          >
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
