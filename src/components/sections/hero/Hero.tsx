@@ -17,7 +17,7 @@ export function Hero() {
         />
       )}
 
-      {isMobile === false && <Vortex rangeY={150} particleCount={800} />}
+      {isMobile === false && <Vortex rangeY={150} particleCount={600} />}
 
       {/* <div className="absolute inset-0 bg-black/5 backdrop-blur-[2px] z-[10]" /> */}
 
