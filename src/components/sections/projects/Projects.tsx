@@ -14,7 +14,7 @@ export function Projects({
 }: Props) {
   return (
     <div
-      className="my-12 py-12 md:my-20 md:py-20 flex flex-col justify-center"
+      className="my-12 py-8 md:my-20 md:py-10 flex flex-col justify-center"
       id={id}
     >
       <AppleCarousel
