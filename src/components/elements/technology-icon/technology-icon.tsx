@@ -18,6 +18,7 @@ import Figma from "@/assets/svg/technologies/figma.svg";
 import Jira from "@/assets/svg/technologies/jira.svg";
 import Linear from "@/assets/svg/technologies/linear.svg";
 import Openai from "@/assets/svg/technologies/openai.svg";
+import Gsap from "@/assets/svg/technologies/gsap.svg";
 
 const icons = {
   javascript: Javascript,
@@ -40,6 +41,7 @@ const icons = {
   jira: Jira,
   linear: Linear,
   openai: Openai,
+  gsap: Gsap,
 };
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
