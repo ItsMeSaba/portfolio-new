@@ -4,8 +4,13 @@ import CssCommentGrouperLogo from "@/assets/img/project-logos/css-comment-groupe
 import UnlinkedinLogo from "@/assets/img/project-logos/unlinkedin.png";
 
 import CssCommentGrouperPhoto from "@/assets/img/personal-projects/css-comment-grouper.png";
+
 import UnlinkedinPhoto from "@/assets/img/personal-projects/unlinkedin.png";
 import UnlinkedinPhoto2 from "@/assets/img/personal-projects/unlinkedin-2.png";
+
+import FairpayLogo from "@/assets/img/project-logos/fairpay.webp";
+import FairpayPhoto from "@/assets/img/personal-projects/fairpay.png";
+import FairpayPhoto2 from "@/assets/img/personal-projects/fairpay-2.png";
 
 export interface Project {
   category: string;
@@ -18,6 +23,40 @@ export interface Project {
 }
 
 export const personalProjects: Project[] = [
+  {
+    category: "Website",
+    title: "Fairpay",
+    src: FairpayLogo.src,
+    images: [FairpayPhoto.src, FairpayPhoto2.src],
+    content: (
+      <div className="prose">
+        <p>
+          Fairpay was a website dedicated to providing salary and review
+          information about companies specifically for the Georgian market. The
+          idea was born out of frustration with Glassdoor’s lack of data for
+          Georgia.
+        </p>
+
+        <br />
+
+        <p>
+          From conception through design and implementation of both front-end
+          and back-end, I managed every aspect of the project. We initially used
+          a Next.js + NestJS stack, but for various reasons I decided to pause
+          development.
+        </p>
+
+        <br />
+
+        <p>
+          To date, I’ve migrated the front-end to Next.js 15, though the
+          back-end is currently absent. Even though the project is on hold, I’m
+          considering giving it another try.
+        </p>
+      </div>
+    ),
+    link: "https://fairpay.vercel.app/",
+  },
   {
     category: "Tool",
     title: "CSS Comment Grouper",
