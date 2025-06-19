@@ -33,6 +33,10 @@ export const techStack: TechStack[] = [
         name: "Nuxt.js",
         icon: "nuxtjs",
       },
+      {
+        name: "GSAP",
+        icon: "gsap",
+      },
     ],
   },
   {
