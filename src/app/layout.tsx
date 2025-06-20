@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import { Header } from "@/components/sections/header/Header";
-import { Footer } from "@/components/sections/footer/Footer";
 import { Lenis } from "@/lib/lenis/Lenis";
+import { Geist, Geist_Mono } from "next/font/google";
+import { Footer } from "@/components/sections/footer/Footer";
+import { Header } from "@/components/sections/header/Header";
+import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,8 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Saba Silagadze",
-  description: "My Portfolio",
+  title: "Saba Silagadze | Full-Stack Developer (Next.js & NestJS)",
+  description:
+    "Portfolio of Saba Silagadze, a JavaScript-ecosystem developer specializing in Next.js, GSAP animations, and performance-optimized web apps.",
 };
 
 export default function RootLayout({
