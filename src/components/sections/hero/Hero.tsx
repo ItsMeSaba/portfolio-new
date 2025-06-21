@@ -2,12 +2,15 @@
 
 import { Vortex } from "@/components/aceternity-ui/vortex/Vortex";
 import { useIsMobile } from "@/base/hooks/use-is-mobile";
+import { useEffect } from "react";
 
 export function Hero() {
   const isMobile = useIsMobile();
 
+  useEffect(() => {}, [isMobile]);
+
   return (
-    <section className="min-h-[600px] md:min-h-[100dvh] relative select-none flex items-center">
+    <section className="min-h-[90vh] md:min-h-[100dvh] relative select-none flex items-center">
       {isMobile === true && (
         <Vortex
           rangeY={250}
