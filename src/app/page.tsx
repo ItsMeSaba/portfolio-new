@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className="min-h-screen relative font-[family-name:var(--font-geist-sans)]">
       <main className="w-full min-h-screen">
-        <Hero />
+        {/* <Hero /> */}
 
         <Text
           id="about"
