@@ -73,11 +73,13 @@ export function Form() {
       <input
         value={"sbsilagadze@gmail.com"}
         disabled
+        aria-label="My Email"
         className={styles.input}
         type="email"
       />
 
       <input
+        aria-label="Your Email"
         onChange={(e) => handleChange({ email: e.target.value })}
         placeholder="Your Email"
         className={styles.input}
@@ -85,6 +87,7 @@ export function Form() {
       />
 
       <input
+        aria-label="Subject"
         onChange={(e) => handleChange({ subject: e.target.value })}
         placeholder="Subject"
         className={styles.input}
@@ -92,6 +95,7 @@ export function Form() {
       />
 
       <textarea
+        aria-label="Message"
         onChange={(e) => handleChange({ message: e.target.value })}
         rows={7}
         placeholder="Message"
