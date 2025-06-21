@@ -1,26 +1,9 @@
-"use client";
-
-import { Vortex } from "@/components/aceternity-ui/vortex/Vortex";
-import { useIsMobile } from "@/base/hooks/use-is-mobile";
-import { useEffect } from "react";
+import { HeroVortex } from "./components/HeroVortex";
 
 export function Hero() {
-  const isMobile = useIsMobile();
-
-  useEffect(() => {}, [isMobile]);
-
   return (
     <section className="min-h-[90vh] md:min-h-[100dvh] relative select-none flex items-center">
-      {isMobile === true && (
-        <Vortex
-          rangeY={250}
-          particleCount={400}
-          baseRadius={1}
-          rangeRadius={1}
-        />
-      )}
-
-      {isMobile === false && <Vortex rangeY={150} particleCount={600} />}
+      <HeroVortex />
 
       <div className="relative z-10 flex items-center justify-center w-full h-full">
         <div className="flex flex-col gap-1 text-white">
