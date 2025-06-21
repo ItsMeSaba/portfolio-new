@@ -16,7 +16,7 @@ export function Text({ words, textClassName, className, id }: Props) {
         className
       )}
     >
-      <h2 className="leading-[35px] max-w-[1100px] text-xl md:text-3xl md:leading-[50px] font-bold">
+      <h2 className="leading-[35px] max-w-[1200px] px-10 text-balance text-xl md:text-3xl md:leading-[50px] font-bold">
         {words}
       </h2>
     </div>
