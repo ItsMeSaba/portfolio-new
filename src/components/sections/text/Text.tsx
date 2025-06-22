@@ -12,11 +12,11 @@ export function Text({ words, textClassName, className, id }: Props) {
     <div
       id={id}
       className={clsx(
-        "my-12 py-12 md:min-h-[200px] container flex items-center text-balance",
+        "h-[85vh] w-screen flex items-center justify-center bg-black",
         className
       )}
     >
-      <h2 className="leading-[35px] text-xl md:text-3xl md:leading-[50px] font-bold">
+      <h2 className="leading-[35px] max-w-[1200px] px-10 text-balance text-xl md:text-3xl md:leading-[50px] font-bold">
         {words}
       </h2>
     </div>
