@@ -154,6 +154,7 @@ export const AppleCarousel = ({
                 id={`apple-card-${index}`}
                 className="last:pr-[5%] md:last:pr-[33%]  rounded-3xl"
               >
+                {/* Item is component Card */}
                 {item}
               </motion.div>
             ))}

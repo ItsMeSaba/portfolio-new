@@ -6,7 +6,7 @@ import { TechStack } from "@/components/sections/tech-stack/TechStack";
 import { LinkedinRecommendations } from "@/components/sections/linkedin-recommendations/LinkedinRecommendations";
 import { ContactMe } from "@/components/sections/contact-me/ContactMe";
 import { bejamasProjects } from "@/components/sections/projects/bejamas-projects";
-import { personalProjects } from "@/components/sections/projects/personal-proejcts";
+import { personalProjects } from "@/components/sections/projects/personal-projects";
 
 export default function Home() {
   return (
