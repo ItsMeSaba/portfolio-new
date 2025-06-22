@@ -1,8 +1,7 @@
 "use client";
 
 import { cn } from "@/components/aceternity-ui/lib/utils";
-import React, { useEffect, useRef } from "react";
-import { createNoise3D } from "simplex-noise";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 interface VortexProps {
@@ -22,30 +21,8 @@ interface VortexProps {
 export function Vortex(props: VortexProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef(null);
-  const particleCount = props.particleCount || 700;
-  const particlePropCount = 9;
-  const particlePropsLength = particleCount * particlePropCount;
-  const rangeY = props.rangeY || 100;
-  // const baseTTL = 50;
-  const baseTTL = 200;
-  const rangeTTL = 150;
-  const baseSpeed = props.baseSpeed || 0;
-  // const rangeSpeed = props.rangeSpeed || 1.5;
-  const rangeSpeed = props.rangeSpeed || 1;
-  const baseRadius = props.baseRadius || 1;
-  const rangeRadius = props.rangeRadius || 2;
-  let baseHue = props.baseHue || 200;
-  const rangeHue = 100;
-  const noiseSteps = 3;
-  const xOff = 0.00125;
-  const yOff = 0.00125;
-  const zOff = 0.0005;
-  const backgroundColor = props.backgroundColor || "#000000";
-  let tick = 0;
-  const noise3D = createNoise3D();
-  let particleProps = new Float32Array(particlePropsLength);
-  let center: [number, number] = [0, 0];
-  let hueDirection = 1; // for changing color of particles
+  const workerRef = useRef<Worker | null>(null);
+  const [canvasWidth, setCanvasWidth] = useState<number | null>(null);
 
   const mouseCoords = useRef<{ x: null | number; y: null | number }>({
     x: null,
@@ -53,273 +30,130 @@ export function Vortex(props: VortexProps) {
   });
   const isMouseDown = useRef(false);
 
-  const HALF_PI: number = 0.5 * Math.PI;
-  const TAU: number = 2 * Math.PI;
-  const TO_RAD: number = Math.PI / 180;
-  const rand = (n: number): number => n * Math.random();
-  const randRange = (n: number): number => n - rand(2 * n);
-  const fadeInOut = (t: number, m: number): number => {
-    let hm = 0.5 * m;
-    return Math.abs(((t + hm) % m) - hm) / hm;
-  };
-  const lerp = (n1: number, n2: number, speed: number): number =>
-    (1 - speed) * n1 + speed * n2;
-
-  const setup = () => {
+  const setupWorker = () => {
     const canvas = canvasRef.current;
     const container = containerRef.current;
-    if (canvas && container) {
-      const ctx = canvas.getContext("2d");
 
-      if (ctx) {
-        resize(canvas, ctx);
-        initParticles();
-        draw(canvas, ctx);
+    if (!canvas || !container) return;
+
+    // Create worker
+    workerRef.current = new Worker(new URL("./Worker.js", import.meta.url), {
+      type: "module",
+    });
+
+    // workerRef.current.onerror = (e) => {
+    //   console.error("Worker error:", {
+    //     message: e.message,
+    //     filename: e.filename,
+    //     lineno: e.lineno,
+    //     colno: e.colno,
+    //   });
+    // };
+
+    // Initialize worker with canvas and config
+    const offscreenCanvas = canvas.transferControlToOffscreen();
+    const config = {
+      particleCount: props.particleCount || 700,
+      rangeY: props.rangeY || 100,
+      baseHue: props.baseHue || 200,
+      baseSpeed: props.baseSpeed || 0,
+      rangeSpeed: props.rangeSpeed || 1,
+      baseRadius: props.baseRadius || 1,
+      rangeRadius: props.rangeRadius || 2,
+      backgroundColor: props.backgroundColor || "#000000",
+    };
+
+    workerRef.current.onmessage = (e) => {
+      console.log("Worker message:");
+
+      if (e.data.type === "error") {
+        console.error("Worker error:", e.data.data);
       }
+    };
+
+    console.log("workerRef.current", workerRef.current);
+
+    workerRef.current.postMessage(
+      {
+        type: "init",
+        data: {
+          canvas: offscreenCanvas,
+          width: 1500,
+          height: 600,
+          // width: window.innerWidth,
+          // height: window.innerHeight,
+          config,
+        },
+      },
+      [offscreenCanvas]
+    );
+  };
+
+  const handleMouseMove = (e: MouseEvent) => {
+    const canvasDimensions = canvasRef.current?.getBoundingClientRect();
+    if (!canvasDimensions) return;
+
+    const mouseX = e.clientX - canvasDimensions.left;
+    const mouseY = e.clientY - canvasDimensions.top;
+
+    mouseCoords.current = { x: mouseX, y: mouseY };
+
+    if (workerRef.current) {
+      workerRef.current.postMessage({
+        type: "mouseMove",
+        data: { x: mouseX, y: mouseY },
+      });
     }
   };
 
-  const initParticles = () => {
-    tick = 0;
-    // simplex = new SimplexNoise();
-    particleProps = new Float32Array(particlePropsLength);
-
-    for (let i = 0; i < particlePropsLength; i += particlePropCount) {
-      initParticle(i);
+  const handleMouseDown = () => {
+    isMouseDown.current = true;
+    if (workerRef.current) {
+      workerRef.current.postMessage({ type: "mouseDown" });
     }
   };
 
-  const initParticle = (i: number) => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    let x, y, vx, vy, life, ttl, speed, radius, hue;
-
-    x = rand(canvas.width);
-    y = center[1] + randRange(rangeY);
-    vx = 0;
-    vy = 0;
-    life = 0;
-    ttl = baseTTL + rand(rangeTTL);
-    speed = baseSpeed + rand(rangeSpeed);
-    radius = baseRadius + rand(rangeRadius);
-    hue = baseHue + rand(rangeHue);
-
-    particleProps.set([x, y, vx, vy, life, ttl, speed, radius, hue], i);
-  };
-
-  const draw = (canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) => {
-    tick++;
-
-    // Update baseHue based on tick
-    if (tick % 2 === 0) {
-      // Adjust speed by changing modulo value
-      baseHue += hueDirection;
-      if (baseHue >= 250) hueDirection = -1;
-      if (baseHue <= 0) hueDirection = 1;
-    }
-
-    // Skip every 3rd frame
-    if (tick % 3 !== 0) {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      ctx.fillStyle = backgroundColor;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      drawParticles(ctx);
-      renderGlow(canvas, ctx);
-      renderToScreen(canvas, ctx);
-    }
-
-    window.requestAnimationFrame(() => draw(canvas, ctx));
-  };
-
-  const drawParticles = (ctx: CanvasRenderingContext2D) => {
-    for (let i = 0; i < particlePropsLength; i += particlePropCount) {
-      updateParticle(i, ctx);
+  const handleMouseUp = () => {
+    isMouseDown.current = false;
+    if (workerRef.current) {
+      workerRef.current.postMessage({ type: "mouseUp" });
     }
   };
 
-  const updateParticle = (i: number, ctx: CanvasRenderingContext2D) => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    let i2 = 1 + i,
-      i3 = 2 + i,
-      i4 = 3 + i,
-      i5 = 4 + i,
-      i6 = 5 + i,
-      i7 = 6 + i,
-      i8 = 7 + i,
-      i9 = 8 + i;
-    let n, x, y, vx, vy, life, ttl, speed, x2, y2, radius, hue;
-
-    x = particleProps[i];
-    y = particleProps[i2];
-    n = noise3D(x * xOff, y * yOff, tick * zOff) * noiseSteps * TAU;
-    vx = lerp(particleProps[i3], Math.cos(n), 0.5);
-    vy = lerp(particleProps[i4], Math.sin(n), 0.5);
-    life = particleProps[i5];
-    ttl = particleProps[i6];
-    speed = particleProps[i7];
-    x2 = x + vx * speed;
-    y2 = y + vy * speed;
-    radius = particleProps[i8];
-    hue = particleProps[i9];
-
-    // Repulsion logic
-    const mouseRadius = isMouseDown.current ? 150 : 100;
-    const mouseX = mouseCoords.current.x;
-    const mouseY = mouseCoords.current.y;
-
-    if (mouseX !== null && mouseY !== null) {
-      const dx = x - mouseX;
-      const dy = y - mouseY;
-      const distance = Math.sqrt(dx * dx + dy * dy);
-
-      if (distance < mouseRadius) {
-        const angle = Math.atan2(dy, dx);
-        // const repulsionStrength = (mouseRadius - distance) / mouseRadius;
-        // const repulsionStrength = (mouseRadius - distance) / mouseRadius;
-        const repulsionStrength = 10;
-
-        if (isMouseDown.current) {
-          vx -= Math.cos(angle) * repulsionStrength;
-          vy -= Math.sin(angle) * repulsionStrength;
-        } else {
-          // Move away from the mouse
-          // vx += Math.cos(angle) * repulsionStrength;
-          // vy += Math.sin(angle) * repulsionStrength;
-
-          // Spin particles around the mouse
-          const spinStrength = 0.005; // Controls how fast particles spin
-          const cosAngle = Math.cos(angle + spinStrength);
-          const sinAngle = Math.sin(angle + spinStrength);
-
-          const newVx = -dy * repulsionStrength * spinStrength; // Perpendicular to the radius
-          const newVy = dx * repulsionStrength * spinStrength; // Perpendicular to the radius
-
-          vx += newVx;
-          vy += newVy;
-        }
-      }
+  const handleResize = () => {
+    if (workerRef.current) {
+      workerRef.current.postMessage({
+        type: "resize",
+        data: {
+          width: window.innerWidth,
+          height: window.innerHeight,
+        },
+      });
     }
-    //
-
-    // drawParticle(x, y, x2, y2, life, ttl, radius*1, hue, ctx);
-    drawParticle(x, y, x2, y2, life, ttl, radius * 1.2, hue, ctx);
-
-    life++;
-
-    particleProps[i] = x2;
-    particleProps[i2] = y2;
-    particleProps[i3] = vx;
-    particleProps[i4] = vy;
-    particleProps[i5] = life;
-
-    (checkBounds(x, y, canvas) || life > ttl) && initParticle(i);
-  };
-
-  const drawParticle = (
-    x: number,
-    y: number,
-    x2: number,
-    y2: number,
-    life: number,
-    ttl: number,
-    radius: number,
-    hue: number,
-    ctx: CanvasRenderingContext2D
-  ) => {
-    ctx.save();
-    ctx.lineCap = "round";
-    ctx.lineWidth = radius;
-    ctx.strokeStyle = `hsla(${hue},100%,60%,${fadeInOut(life, ttl)})`;
-    ctx.beginPath();
-    ctx.moveTo(x, y);
-    ctx.lineTo(x2, y2);
-    ctx.stroke();
-    ctx.closePath();
-    ctx.restore();
-  };
-
-  const checkBounds = (x: number, y: number, canvas: HTMLCanvasElement) => {
-    return x > canvas.width || x < 0 || y > canvas.height || y < 0;
-  };
-
-  const resize = (
-    canvas: HTMLCanvasElement,
-    ctx?: CanvasRenderingContext2D
-  ) => {
-    const { innerWidth, innerHeight } = window;
-
-    canvas.width = innerWidth;
-    canvas.height = innerHeight;
-
-    center[0] = 0.5 * canvas.width;
-    center[1] = 0.5 * canvas.height;
-  };
-
-  const renderGlow = (
-    canvas: HTMLCanvasElement,
-    ctx: CanvasRenderingContext2D
-  ) => {
-    ctx.save();
-    ctx.filter = "blur(8px) brightness(150%)";
-    ctx.globalCompositeOperation = "lighter";
-    ctx.drawImage(canvas, 0, 0);
-    ctx.restore();
-
-    ctx.save();
-    ctx.filter = "blur(4px) brightness(150%)";
-    ctx.globalCompositeOperation = "lighter";
-    ctx.drawImage(canvas, 0, 0);
-    ctx.restore();
-  };
-
-  const renderToScreen = (
-    canvas: HTMLCanvasElement,
-    ctx: CanvasRenderingContext2D
-  ) => {
-    ctx.save();
-    ctx.globalCompositeOperation = "lighter";
-    ctx.drawImage(canvas, 0, 0);
-    ctx.restore();
   };
 
   useEffect(() => {
-    setup();
+    // setCanvasWidth(window?.innerWidth);
+    setupWorker();
 
-    // Disabled for now, causes layout shift on mobile when search bar gets hidden
-    // window.addEventListener("resize", () => {
-    //   const canvas = canvasRef.current;
-    //   const ctx = canvas?.getContext("2d");
-    //   if (canvas && ctx) {
-    //     resize(canvas, ctx);
-    //   }
-    // });
-
-    window.addEventListener("mousemove", (e) => {
-      const canvasDimensions = canvasRef.current?.getBoundingClientRect();
-
-      if (!canvasDimensions) return;
-
-      const mouseX = e.clientX - canvasDimensions.left;
-      const mouseY = e.clientY - canvasDimensions.top;
-
-      mouseCoords.current = { x: mouseX, y: mouseY };
-    });
-
-    const handleMouseDown = () => {
-      isMouseDown.current = true;
-    };
-
-    const handleMouseUp = () => {
-      isMouseDown.current = false;
-    };
-
+    // Add event listeners
+    window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("mousedown", handleMouseDown);
     window.addEventListener("mouseup", handleMouseUp);
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup function
+    return () => {
+      if (workerRef.current) {
+        workerRef.current.postMessage({ type: "cleanup" });
+        workerRef.current.terminate();
+      }
+
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mousedown", handleMouseDown);
+      window.removeEventListener("mouseup", handleMouseUp);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return (
@@ -330,7 +164,11 @@ export function Vortex(props: VortexProps) {
         ref={containerRef}
         className="absolute h-full w-full inset-0 z-0 bg-transparent flex items-center justify-center"
       >
-        <canvas ref={canvasRef}></canvas>
+        {/* {canvasWidth && (
+          <canvas width={canvasWidth} height={600} ref={canvasRef}></canvas>
+        )} */}
+
+        <canvas width={1500} height={600} ref={canvasRef}></canvas>
       </motion.div>
 
       <div className={cn("relative z-10", props.className)}>
