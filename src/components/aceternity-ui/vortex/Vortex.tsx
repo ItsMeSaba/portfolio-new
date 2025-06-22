@@ -124,7 +124,9 @@ export function Vortex(props: VortexProps) {
   };
 
   useEffect(() => {
-    // setCanvasWidth(window?.innerWidth);
+    setCanvasWidth(window?.innerWidth);
+
+    if (!canvasWidth) return;
 
     setupWorker();
 
@@ -146,7 +148,7 @@ export function Vortex(props: VortexProps) {
       // window.removeEventListener("mouseup", handleMouseUp);
       // window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [canvasWidth]);
 
   return (
     <div className={cn("absolute h-full w-full", props.containerClassName)}>
@@ -156,7 +158,9 @@ export function Vortex(props: VortexProps) {
         ref={containerRef}
         className="absolute h-full w-full inset-0 z-0 bg-transparent flex items-center justify-center"
       >
-        <canvas width={window.innerWidth} height={600} ref={canvasRef}></canvas>
+        {canvasWidth && (
+          <canvas width={canvasWidth} height={600} ref={canvasRef}></canvas>
+        )}
       </motion.div>
 
       <div className={cn("relative z-10", props.className)}>
