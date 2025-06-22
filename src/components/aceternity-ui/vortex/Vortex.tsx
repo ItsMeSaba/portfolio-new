@@ -41,15 +41,6 @@ export function Vortex(props: VortexProps) {
       type: "module",
     });
 
-    // workerRef.current.onerror = (e) => {
-    //   console.error("Worker error:", {
-    //     message: e.message,
-    //     filename: e.filename,
-    //     lineno: e.lineno,
-    //     colno: e.colno,
-    //   });
-    // };
-
     // Initialize worker with canvas and config
     const offscreenCanvas = canvas.transferControlToOffscreen();
     const config = {
@@ -78,7 +69,7 @@ export function Vortex(props: VortexProps) {
         type: "init",
         data: {
           canvas: offscreenCanvas,
-          width: 1500,
+          width: window.innerWidth,
           height: 600,
           // width: window.innerWidth,
           // height: window.innerHeight,
@@ -134,13 +125,14 @@ export function Vortex(props: VortexProps) {
 
   useEffect(() => {
     // setCanvasWidth(window?.innerWidth);
+
     setupWorker();
 
     // Add event listeners
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("mousedown", handleMouseDown);
-    window.addEventListener("mouseup", handleMouseUp);
-    window.addEventListener("resize", handleResize);
+    // window.addEventListener("mousemove", handleMouseMove);
+    // window.addEventListener("mousedown", handleMouseDown);
+    // window.addEventListener("mouseup", handleMouseUp);
+    // window.addEventListener("resize", handleResize);
 
     // Cleanup function
     return () => {
@@ -149,10 +141,10 @@ export function Vortex(props: VortexProps) {
         workerRef.current.terminate();
       }
 
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("mousedown", handleMouseDown);
-      window.removeEventListener("mouseup", handleMouseUp);
-      window.removeEventListener("resize", handleResize);
+      // window.removeEventListener("mousemove", handleMouseMove);
+      // window.removeEventListener("mousedown", handleMouseDown);
+      // window.removeEventListener("mouseup", handleMouseUp);
+      // window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -164,11 +156,7 @@ export function Vortex(props: VortexProps) {
         ref={containerRef}
         className="absolute h-full w-full inset-0 z-0 bg-transparent flex items-center justify-center"
       >
-        {/* {canvasWidth && (
-          <canvas width={canvasWidth} height={600} ref={canvasRef}></canvas>
-        )} */}
-
-        <canvas width={1500} height={600} ref={canvasRef}></canvas>
+        <canvas width={window.innerWidth} height={600} ref={canvasRef}></canvas>
       </motion.div>
 
       <div className={cn("relative z-10", props.className)}>

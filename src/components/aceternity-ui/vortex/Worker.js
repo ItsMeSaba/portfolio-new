@@ -209,7 +209,7 @@ function animate() {
   }
 
   // Continue animation loop
-  animationId = setTimeout(animate, 1000 / 60); // 60 FPS
+  animationId = requestAnimationFrame(animate);
 }
 
 // Message handling
