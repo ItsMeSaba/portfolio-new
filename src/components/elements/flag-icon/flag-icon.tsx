@@ -1,8 +1,9 @@
-import Georgia from "@/assets/svg/flags/georgia.svg";
-import Germany from "@/assets/svg/flags/germany.svg";
-import UnitedStates from "@/assets/svg/flags/united-states.svg";
-import GreatBritain from "@/assets/svg/flags/great-britain.svg";
-import Belgium from "@/assets/svg/flags/belgium.svg";
+import Georgia from "@/assets/svg/flags/georgia.png";
+import Germany from "@/assets/svg/flags/germany.png";
+import UnitedStates from "@/assets/svg/flags/united-states.png";
+import GreatBritain from "@/assets/svg/flags/great-britain.png";
+import Belgium from "@/assets/svg/flags/belgium.png";
+import Image from "next/image";
 
 const icons = {
   georgia: Georgia,
@@ -28,7 +29,7 @@ export function FlagIcon({ country }: Props) {
 
   return (
     <div className="relative">
-      <Icon width={30} height={30} />
+      <Image src={Icon} alt={country} width={30} height={30} />
     </div>
   );
 }
