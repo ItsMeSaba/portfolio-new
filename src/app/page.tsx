@@ -16,7 +16,7 @@ export default function Home() {
 
         <Text
           id="about"
-          words="Full-stack developer with a frontend focus, passionate about crafting sleek, user-friendly web experiences. With over three years of experience in the JavaScript ecosystem, I specialize in building high-performance applications that are both visually appealing and seamlessly functional."
+          words="JavaScript engineer (React / Next.js, Node) with 4+ years building production apps that load in under 1s and serve 100k+ monthly users. I turn design hand-offs into accessible, high-performance interfaces while owning back-end APIs when needed."
         />
 
         <Experience id="experience" />
