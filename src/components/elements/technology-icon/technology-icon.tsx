@@ -19,8 +19,11 @@ import Jira from "@/assets/svg/technologies/jira.svg";
 import Linear from "@/assets/svg/technologies/linear.svg";
 import Openai from "@/assets/svg/technologies/openai.svg";
 import Gsap from "@/assets/svg/technologies/gsap.svg";
+import CursorAI from "@/assets/img/technologies/cursorai.jpeg";
+import clsx from "clsx";
+import { StaticImageData } from "next/image";
 
-const icons = {
+const svgIcons: Record<string, React.FC<React.SVGProps<SVGSVGElement>>> = {
   javascript: Javascript,
   typescript: Typescript,
   react: React,
@@ -35,7 +38,6 @@ const icons = {
   strapi: Strapi,
   nuxtjs: Nuxtjs,
   vue: Vue,
-  cursor: Cursor,
   chatgpt: Chatgpt,
   figma: Figma,
   jira: Jira,
@@ -44,8 +46,12 @@ const icons = {
   gsap: Gsap,
 };
 
+const imgIcons: Record<string, StaticImageData> = {
+  cursor: CursorAI,
+};
+
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
-  name: keyof typeof icons;
+  name: keyof typeof svgIcons | keyof typeof imgIcons;
   className?: string;
   width?: number;
   height?: number;
@@ -58,13 +64,28 @@ export function TechnologyIcon({
   height,
   ...rest
 }: Props) {
-  const Icon = icons[name];
+  const SvgIcon = svgIcons[name];
+  const ImgIcon = imgIcons[name];
 
-  if (!Icon) return null;
+  if (!SvgIcon && !ImgIcon) return null;
 
   return (
     <div className="relative" title={name} {...rest}>
-      <Icon width={width || 35} height={height || 35} className={className} />
+      {SvgIcon && (
+        <SvgIcon
+          width={width || 40}
+          height={height || 40}
+          className={className}
+        />
+      )}
+
+      {!SvgIcon && ImgIcon && (
+        <img
+          src={ImgIcon.src}
+          alt={name}
+          className={clsx("w-[40px] h-[40px]", className)}
+        />
+      )}
     </div>
   );
 }
