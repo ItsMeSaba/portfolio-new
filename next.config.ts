@@ -28,7 +28,6 @@ const nextConfig: NextConfig = withBundleAnalyzer({
     return config;
   },
   experimental: {
-    legacyBrowsers: false,
     turbo: {
       rules: {
         "*.svg": {
