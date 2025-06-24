@@ -1,8 +1,8 @@
-import Georgia from "@/assets/svg/flags/georgia.png";
-import Germany from "@/assets/svg/flags/germany.png";
-import UnitedStates from "@/assets/svg/flags/united-states.png";
-import GreatBritain from "@/assets/svg/flags/great-britain.png";
-import Belgium from "@/assets/svg/flags/belgium.png";
+import Georgia from "@/assets/img/flags/georgia.png";
+import Germany from "@/assets/img/flags/germany.png";
+import UnitedStates from "@/assets/img/flags/united-states.png";
+import GreatBritain from "@/assets/img/flags/great-britain.png";
+import Belgium from "@/assets/img/flags/belgium.png";
 import Image from "next/image";
 
 const icons = {
