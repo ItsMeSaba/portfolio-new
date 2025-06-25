@@ -27,6 +27,9 @@ const nextConfig: NextConfig = withBundleAnalyzer({
 
     return config;
   },
+  polyfill: false,
+  legacyBrowsers: false,
+  browsersListForSwc: true,
   experimental: {
     turbo: {
       rules: {
