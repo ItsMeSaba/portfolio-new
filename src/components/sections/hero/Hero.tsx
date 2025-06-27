@@ -2,7 +2,7 @@ import { HeroVortex } from "./components/HeroVortex";
 
 export function Hero() {
   return (
-    <section className="min-h-[90vh] md:min-h-[100dvh] relative select-none flex items-center">
+    <section className="min-h-[95vh] md:min-h-[100dvh] relative select-none flex items-center">
       <HeroVortex />
 
       <div className="relative z-10 flex items-center justify-center w-full h-full">

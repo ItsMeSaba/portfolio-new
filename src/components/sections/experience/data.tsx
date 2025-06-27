@@ -1,7 +1,7 @@
 import { TechnologyIcon } from "@/components/elements/technology-icon/technology-icon";
 import Image from "next/image";
-import BejamasLogo from "@/assets/img/bejamas-logo-2.png";
-import UnisoftLogo from "@/assets/img/unisoft-logo-2.png";
+import BejamasLogo from "@/assets/img/companies/bejamas-logo.png";
+import UnisoftLogo from "@/assets/img/companies/unisoft-logo.png";
 
 interface Experience {
   title: string;
@@ -15,10 +15,10 @@ export const experienceData: Experience[] = [
       <div>
         <div className="flex items-center">
           <Image src={BejamasLogo} width={50} className="mr-4" alt="" />
-          <h2 className="text-4xl mb-0 font-semibold">Bejamas</h2>
+          <h2 className="text-3xl md:text-4xl mb-0 font-semibold">Bejamas</h2>
         </div>
 
-        <h3 className="mt-3 mb-5 font-medium">
+        <h3 className="text-sm md:text-base mt-3 mb-5 font-medium">
           Remote · Full time · Frontend Developer
         </h3>
 
@@ -70,10 +70,10 @@ export const experienceData: Experience[] = [
       <div>
         <div className="flex items-center">
           <Image src={UnisoftLogo} width={50} className="mr-4" alt="" />
-          <h2 className="text-4xl mb-0 font-semibold">Unisoft</h2>
+          <h2 className="text-3xl md:text-4xl mb-0 font-semibold">Unisoft</h2>
         </div>
 
-        <h3 className="mt-3 mb-5 font-medium">
+        <h3 className="text-sm md:text-base mt-3 mb-5 font-medium">
           Hybrid · Full time · Fullstack Developer
         </h3>
 

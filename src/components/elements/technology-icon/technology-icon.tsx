@@ -69,21 +69,17 @@ export function TechnologyIcon({
 
   if (!SvgIcon && !ImgIcon) return null;
 
+  const iconStyles = "w-[35px] h-[35px] md:w-[40px] md:h-[40px]";
+
   return (
     <div className="relative" title={name} {...rest}>
-      {SvgIcon && (
-        <SvgIcon
-          width={width || 40}
-          height={height || 40}
-          className={className}
-        />
-      )}
+      {SvgIcon && <SvgIcon className={clsx(iconStyles, className)} />}
 
       {!SvgIcon && ImgIcon && (
         <img
           src={ImgIcon.src}
           alt={name}
-          className={clsx("w-[40px] h-[40px]", className)}
+          className={clsx(iconStyles, className)}
         />
       )}
     </div>

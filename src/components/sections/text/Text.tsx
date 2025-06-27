@@ -12,7 +12,7 @@ export function Text({ words, textClassName, className, id }: Props) {
     <div
       id={id}
       className={clsx(
-        "h-[85vh] w-screen flex items-center justify-center bg-black",
+        "h-[100vh] lg:h-[85vh] w-screen flex items-center justify-center bg-black",
         className
       )}
     >
