@@ -1,7 +1,7 @@
 import { TechnologyIcon } from "@/components/elements/technology-icon/technology-icon";
 import Image from "next/image";
-import BejamasLogo from "@/assets/img/bejamas-logo-2.png";
-import UnisoftLogo from "@/assets/img/unisoft-logo-2.png";
+import BejamasLogo from "@/assets/img/companies/bejamas-logo.png";
+import UnisoftLogo from "@/assets/img/companies/unisoft-logo.png";
 
 interface Experience {
   title: string;
