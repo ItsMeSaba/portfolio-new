@@ -81,7 +81,7 @@ export const Card = ({ card, index, layout = false }: CardProps) => {
               exit={{ opacity: 0 }}
               ref={containerRef}
               layoutId={layout ? `card-${card.title}` : undefined}
-              className="overflow-y-auto max-w-5xl mx-auto bg-white dark:bg-neutral-900 h-[95%] z-[60] my-10 p-4 md:p-10 rounded-3xl font-sans relative"
+              className="overflow-y-auto max-w-5xl mx-auto bg-white dark:bg-neutral-900 h-[95%] z-[60] my-10 px-4 py-8 md:p-10 rounded-3xl font-sans relative"
             >
               <button
                 className="absolute top-6 right-6 h-8 w-8 ml-auto bg-black dark:bg-white text-black rounded-full flex items-center justify-center"
@@ -117,7 +117,7 @@ export const Card = ({ card, index, layout = false }: CardProps) => {
               <div className="py-10">{card.content}</div>
 
               {card.images && (
-                <Carousel images={card.images} className="w-[90%]" />
+                <Carousel images={card.images} className="w-full md:w-[90%]" />
               )}
             </motion.div>
           </div>
