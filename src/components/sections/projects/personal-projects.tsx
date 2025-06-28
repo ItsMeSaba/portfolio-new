@@ -1,10 +1,14 @@
 import { Flag } from "@/components/elements/flag-icon/flag-icon";
 
 import CssCommentGrouperLogo from "@/assets/img/project-logos/css-comment-grouper-logo.png";
-import UnlinkedinLogo from "@/assets/img/project-logos/unlinkedin.png";
+
+import WindowsXpPortfolioLogo from "@/assets/img/project-logos/windows-xp-logo.png";
+import WindowsXpPortfolioPhoto from "@/assets/img/personal-projects/windows-xp-portfolio.png";
+import WindowsXpPortfolioPhoto2 from "@/assets/img/personal-projects/windows-xp-portfolio-2.png";
 
 import CssCommentGrouperPhoto from "@/assets/img/personal-projects/css-comment-grouper.png";
 
+import UnlinkedinLogo from "@/assets/img/project-logos/unlinkedin.png";
 import UnlinkedinPhoto from "@/assets/img/personal-projects/unlinkedin.png";
 import UnlinkedinPhoto2 from "@/assets/img/personal-projects/unlinkedin-2.png";
 
@@ -103,5 +107,20 @@ export const personalProjects: Project[] = [
     ),
     images: [UnlinkedinPhoto.src, UnlinkedinPhoto2.src],
     link: "https://chromewebstore.google.com/detail/linkedout-post-filter/kghdmkmpfphijnmkkeeejjmhfngffmhe",
+  },
+  {
+    category: "Portfolio",
+    title: "Windows XP Portfolio",
+    src: WindowsXpPortfolioLogo.src,
+    content: (
+      <div className="prose">
+        <p>
+          I created this website as my portfolio but decided not to use it due
+          to several factors.
+        </p>
+      </div>
+    ),
+    link: "https://saba-windows-xp-portfolio.vercel.app/",
+    images: [WindowsXpPortfolioPhoto2.src, WindowsXpPortfolioPhoto.src],
   },
 ];
