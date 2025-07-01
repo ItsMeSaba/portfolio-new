@@ -33,7 +33,7 @@ export interface Project {
 export const personalProjects: Project[] = [
   {
     category: "Animation Library",
-    title: "Motionn Mimic",
+    title: "Motion Mimic",
     src: MotionMimicLogo.src,
     images: [MotionMimicPhoto.src, MotionMimicPhoto2.src],
     content: (
