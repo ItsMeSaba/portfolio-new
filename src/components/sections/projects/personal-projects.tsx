@@ -16,6 +16,10 @@ import FairpayLogo from "@/assets/img/project-logos/fairpay.webp";
 import FairpayPhoto from "@/assets/img/personal-projects/fairpay.png";
 import FairpayPhoto2 from "@/assets/img/personal-projects/fairpay-2.png";
 
+import MotionMimicLogo from "@/assets/img/project-logos/motion-mimic-logo.webp";
+import MotionMimicPhoto from "@/assets/img/personal-projects/motion-mimic.png";
+import MotionMimicPhoto2 from "@/assets/img/personal-projects/motion-mimic-2.png";
+
 export interface Project {
   category: string;
   title: string;
@@ -27,6 +31,27 @@ export interface Project {
 }
 
 export const personalProjects: Project[] = [
+  {
+    category: "Animation Library",
+    title: "Motionn Mimic",
+    src: MotionMimicLogo.src,
+    images: [MotionMimicPhoto.src, MotionMimicPhoto2.src],
+    content: (
+      <div className="prose">
+        <p>
+          Motion Mimic is a animation library designed for NextJS and React.
+        </p>
+
+        <br />
+
+        <p>
+          Here I recreate animations from different websites which I found
+          interesting.
+        </p>
+      </div>
+    ),
+    link: "https://motion-mimic.vercel.app/",
+  },
   {
     category: "Website",
     title: "Fairpay",
