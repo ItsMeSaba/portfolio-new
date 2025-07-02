@@ -28,6 +28,7 @@ export interface Project {
   content: React.ReactNode | null;
   link?: string;
   images?: string[];
+  github?: string;
 }
 
 export const personalProjects: Project[] = [
@@ -51,6 +52,7 @@ export const personalProjects: Project[] = [
       </div>
     ),
     link: "https://motion-mimic.vercel.app/",
+    github: "https://github.com/ItsMeSaba/motion-mimic",
   },
   {
     category: "Website",
@@ -85,6 +87,7 @@ export const personalProjects: Project[] = [
       </div>
     ),
     link: "https://fairpay.vercel.app/",
+    github: "https://github.com/ItsMeSaba/fairpay-ge",
   },
   {
     category: "Tool",
@@ -109,6 +112,7 @@ export const personalProjects: Project[] = [
     ),
     link: "https://css-comment-groupper-dev.netlify.app/",
     images: [CssCommentGrouperPhoto.src],
+    github: "https://github.com/ItsMeSaba/css-comment-grouper-package",
   },
   {
     category: "Chrome Extension",
@@ -132,6 +136,7 @@ export const personalProjects: Project[] = [
     ),
     images: [UnlinkedinPhoto.src, UnlinkedinPhoto2.src],
     link: "https://chromewebstore.google.com/detail/linkedout-post-filter/kghdmkmpfphijnmkkeeejjmhfngffmhe",
+    // github: "https://github.com/ItsMeSaba/linkedout-extension",
   },
   {
     category: "Portfolio",
@@ -147,5 +152,6 @@ export const personalProjects: Project[] = [
     ),
     link: "https://saba-windows-xp-portfolio.vercel.app/",
     images: [WindowsXpPortfolioPhoto2.src, WindowsXpPortfolioPhoto.src],
+    github: "https://github.com/ItsMeSaba/WindowsXpPortfolio",
   },
 ];
