@@ -19,6 +19,7 @@ type CardProps = {
     content: React.ReactNode;
     link?: string;
     images?: string[];
+    github?: string;
   };
   index: number;
   layout?: boolean;
@@ -112,12 +113,20 @@ export const Card = ({ card, index, layout = false }: CardProps) => {
                     </span>
                   </Link>
                 )}
+
+                {card.github && (
+                  <Link href={card.github} target="_blank">
+                    <span className="text-md font-medium underline text-neutral-700 mt-4 dark:text-white">
+                      GitHub
+                    </span>
+                  </Link>
+                )}
               </div>
 
               <div className="py-10">{card.content}</div>
 
               {card.images && (
-                <Carousel images={card.images} className="w-full md:w-[90%]" />
+                <Carousel images={card.images} className="w-full" />
               )}
             </motion.div>
           </div>
