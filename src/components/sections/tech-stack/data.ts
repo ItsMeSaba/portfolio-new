@@ -37,6 +37,14 @@ export const techStack: TechStack[] = [
         name: "GSAP",
         icon: "gsap",
       },
+      {
+        name: "Tailwind",
+        icon: "tailwind",
+      },
+      {
+        name: "GraphQL",
+        icon: "graphql",
+      },
     ],
   },
   {
