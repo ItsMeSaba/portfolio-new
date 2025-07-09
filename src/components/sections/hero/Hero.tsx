@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { HeroVortex } from "./components/HeroVortex";
 
 export function Hero() {
@@ -7,7 +8,12 @@ export function Hero() {
 
       <div className="relative z-10 flex items-center justify-center w-full h-full">
         <div className="flex flex-col gap-1 text-white">
-          <p className="text-xl md:text-3xl backdrop-blur-[30px] rounded-md overflow-hidden mx-auto w-fit font-semibold py-[2px] px-2">
+          <p
+            className={clsx(
+              "text-xl md:text-3xl backdrop-blur-[30px] rounded-md overflow-hidden mx-auto w-fit",
+              "font-semibold py-[2px] px-2"
+            )}
+          >
             Hi! I'm
           </p>
 
