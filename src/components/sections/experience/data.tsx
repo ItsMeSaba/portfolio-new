@@ -25,10 +25,10 @@ export const experienceData: Experience[] = [
         <div className="mb-10 leading-7">
           <p className="text-balance mb-4">
             Bejamas is a Poland-based web development company operating remotely
-            on a global scale. We specialize in building and maintaining
-            Jamstack websites, catering to a diverse range of international
-            clients. Our portfolio includes prominent brands such as Alpro and
-            Veezu, showcasing our expertise and broad industry appeal.
+            on a global scale. Specializing in building and maintaining Jamstack
+            websites, catering to a diverse range of international clients.
+            Portfolio includes prominent brands such as Alpro and Veezu,
+            showcasing expertise and broad industry appeal.
           </p>
 
           <p className="mb-2">As a developer my responsibilities include:</p>
