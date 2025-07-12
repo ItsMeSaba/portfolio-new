@@ -10,7 +10,7 @@ interface Experience {
 
 export const experienceData: Experience[] = [
   {
-    title: "2022-Present",
+    title: "2023-Present",
     content: (
       <div>
         <div className="flex items-center">
