@@ -8,7 +8,7 @@ export function Footer() {
     <footer className="bg-black py-8">
       <div
         className={clsx(
-          "container max-w-screen-xl gap-6 justify-between",
+          "container max-w-screen-xl gap-6 flex flex-col md:flex-row justify-between",
           "items-start md:items-center"
         )}
       >
