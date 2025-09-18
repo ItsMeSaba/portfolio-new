@@ -78,6 +78,15 @@ export const techStack: TechStack[] = [
     ],
   },
   {
+    title: "Cloud",
+    items: [
+      {
+        name: "AWS",
+        icon: "aws",
+      },
+    ],
+  },
+  {
     title: "Hosts",
     items: [
       {

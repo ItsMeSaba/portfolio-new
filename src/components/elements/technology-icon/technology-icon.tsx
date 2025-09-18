@@ -20,34 +20,36 @@ import Figma from "@/assets/svg/technologies/figma.svg";
 import Node from "@/assets/svg/technologies/node.svg";
 import Jira from "@/assets/svg/technologies/jira.svg";
 import Gsap from "@/assets/svg/technologies/gsap.svg";
+import Aws from "@/assets/svg/technologies/aws.svg";
 import Vue from "@/assets/svg/technologies/vue.svg";
 import clsx from "clsx";
 
 import { StaticImageData } from "next/image";
 
 const svgIcons: Record<string, React.FC<React.SVGProps<SVGSVGElement>>> = {
-  javascript: Javascript,
-  typescript: Typescript,
-  react: React,
+  vue: Vue,
+  jira: Jira,
+  gsap: Gsap,
+  aws: Aws,
+  figma: Figma,
   nextjs: Nextjs,
+  linear: Linear,
+  react: React,
+  strapi: Strapi,
   nestjs: Nestjs,
+  openai: Openai,
+  nuxtjs: Nuxtjs,
+  graphql: Graphql,
   nodejs: Node,
-  mongodb: MongoDB,
   netlify: Netlify,
   vercel: Vercel,
+  chatgpt: Chatgpt,
+  tailwind: Tailwind,
+  mongodb: MongoDB,
+  typescript: Typescript,
+  javascript: Javascript,
   contentful: Contentful,
   storyblok: Storyblok,
-  strapi: Strapi,
-  nuxtjs: Nuxtjs,
-  vue: Vue,
-  chatgpt: Chatgpt,
-  figma: Figma,
-  jira: Jira,
-  linear: Linear,
-  openai: Openai,
-  gsap: Gsap,
-  graphql: Graphql,
-  tailwind: Tailwind,
 };
 
 const imgIcons: Record<string, StaticImageData> = {
