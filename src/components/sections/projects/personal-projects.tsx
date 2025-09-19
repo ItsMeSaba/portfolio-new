@@ -20,6 +20,9 @@ import MotionMimicLogo from "@/assets/img/project-logos/motion-mimic-logo.webp";
 import MotionMimicPhoto from "@/assets/img/personal-projects/motion-mimic.png";
 import MotionMimicPhoto2 from "@/assets/img/personal-projects/motion-mimic-2.png";
 
+import CarvisLogo from "@/assets/img/project-logos/carvis.png";
+import CarvisPhoto from "@/assets/img/personal-projects/carvis.png";
+
 export interface Project {
   category: string;
   title: string;
@@ -32,6 +35,23 @@ export interface Project {
 }
 
 export const personalProjects: Project[] = [
+  {
+    category: "Website",
+    title: "Carvis",
+    src: CarvisLogo.src,
+    content: (
+      <div className="prose">
+        <p>
+          Carvis is a platform designed to make finding car services simple and
+          reliable. The idea was born from the frustration of Google Maps’
+          messy, unorganized data.
+        </p>
+      </div>
+    ),
+    link: "https://carvis.ge/",
+    images: [CarvisPhoto.src],
+    // github: "https://github.com/ItsMeSaba/carvis-ge",
+  },
   {
     category: "Animation Library",
     title: "Motion Mimic",
