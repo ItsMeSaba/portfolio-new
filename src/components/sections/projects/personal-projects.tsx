@@ -53,26 +53,28 @@ export const personalProjects: Project[] = [
     // github: "https://github.com/ItsMeSaba/carvis-ge",
   },
   {
-    category: "Animation Library",
-    title: "Motion Mimic",
-    src: MotionMimicLogo.src,
-    images: [MotionMimicPhoto.src, MotionMimicPhoto2.src],
+    category: "Chrome Extension",
+    title: "Unlinkedin",
+    src: UnlinkedinLogo.src,
     content: (
       <div className="prose">
         <p>
-          Motion Mimic is a animation library designed for NextJS and React.
+          I created this extension to filter out unwanted LinkedIn posts, based
+          on either language or topic.
         </p>
 
         <br />
 
         <p>
-          Here I recreate animations from different websites which I found
-          interesting.
+          The initial implementation used OpenAI, but since I wanted to make it
+          accessible to everyone without concerns about cost, I decided to
+          rebuild it with a more granular approach.
         </p>
       </div>
     ),
-    link: "https://motion-mimic.vercel.app/",
-    github: "https://github.com/ItsMeSaba/motion-mimic",
+    images: [UnlinkedinPhoto.src, UnlinkedinPhoto2.src],
+    link: "https://chromewebstore.google.com/detail/linkedout-post-filter/kghdmkmpfphijnmkkeeejjmhfngffmhe",
+    // github: "https://github.com/ItsMeSaba/linkedout-extension",
   },
   {
     category: "Website",
@@ -135,28 +137,26 @@ export const personalProjects: Project[] = [
     github: "https://github.com/ItsMeSaba/css-comment-grouper-package",
   },
   {
-    category: "Chrome Extension",
-    title: "Unlinkedin",
-    src: UnlinkedinLogo.src,
+    category: "Animation Library",
+    title: "Motion Mimic",
+    src: MotionMimicLogo.src,
+    images: [MotionMimicPhoto.src, MotionMimicPhoto2.src],
     content: (
       <div className="prose">
         <p>
-          I created this extension to filter out unwanted LinkedIn posts, based
-          on either language or topic.
+          Motion Mimic is a animation library designed for NextJS and React.
         </p>
 
         <br />
 
         <p>
-          The initial implementation used OpenAI, but since I wanted to make it
-          accessible to everyone without concerns about cost, I decided to
-          rebuild it with a more granular approach.
+          Here I recreate animations from different websites which I found
+          interesting.
         </p>
       </div>
     ),
-    images: [UnlinkedinPhoto.src, UnlinkedinPhoto2.src],
-    link: "https://chromewebstore.google.com/detail/linkedout-post-filter/kghdmkmpfphijnmkkeeejjmhfngffmhe",
-    // github: "https://github.com/ItsMeSaba/linkedout-extension",
+    link: "https://motion-mimic.vercel.app/",
+    github: "https://github.com/ItsMeSaba/motion-mimic",
   },
   {
     category: "Portfolio",

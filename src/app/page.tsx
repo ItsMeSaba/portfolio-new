@@ -16,7 +16,7 @@ export default function Home() {
 
         <Text
           id="about"
-          words="JavaScript engineer (React / Next.js, Node) with 4+ years building production apps that load in under 1s and serve 100k+ monthly users. I turn design hand-offs into accessible, high-performance interfaces while owning back-end APIs when needed."
+          words="Frontend-focused JavaScript engineer with 5+ years of experience building fast, accessible, and SEO-friendly web apps for 100k+ monthly users. Strong foundation in React/Next.js and CMS integration, with additional experience implementing AI-powered features using OpenAI APIs, LangChain, and vector databases. Comfortable owning features end-to-end, from frontend to backend APIs and cloud deployments."
         />
 
         <Experience id="experience" />
