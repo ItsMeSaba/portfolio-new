@@ -2,6 +2,7 @@ import Typescript from "@/assets/svg/technologies/typescript.svg";
 import Javascript from "@/assets/svg/technologies/javascript.svg";
 import Contentful from "@/assets/svg/technologies/contentful.svg";
 import Storyblok from "@/assets/svg/technologies/storyblok.svg";
+import Langchain from "@/assets/svg/technologies/langchain.svg";
 import CursorAI from "@/assets/img/technologies/cursorai.jpeg";
 import Tailwind from "@/assets/svg/technologies/tailwind.svg";
 import MongoDB from "@/assets/svg/technologies/mongodb.svg";
@@ -15,6 +16,7 @@ import Linear from "@/assets/svg/technologies/linear.svg";
 import Strapi from "@/assets/svg/technologies/strapi.svg";
 import Openai from "@/assets/svg/technologies/openai.svg";
 import Vercel from "@/assets/svg/technologies/vercel.svg";
+import Sqlite from "@/assets/svg/technologies/sqlite.svg";
 import React from "@/assets/svg/technologies/react.svg";
 import Figma from "@/assets/svg/technologies/figma.svg";
 import Node from "@/assets/svg/technologies/node.svg";
@@ -31,25 +33,27 @@ const svgIcons: Record<string, React.FC<React.SVGProps<SVGSVGElement>>> = {
   jira: Jira,
   gsap: Gsap,
   aws: Aws,
+  nodejs: Node,
   figma: Figma,
+  react: React,
   nextjs: Nextjs,
   linear: Linear,
-  react: React,
   strapi: Strapi,
   nestjs: Nestjs,
   openai: Openai,
   nuxtjs: Nuxtjs,
-  graphql: Graphql,
-  nodejs: Node,
-  netlify: Netlify,
+  sqlite: Sqlite,
   vercel: Vercel,
+  graphql: Graphql,
+  langchain: Langchain,
+  netlify: Netlify,
   chatgpt: Chatgpt,
-  tailwind: Tailwind,
   mongodb: MongoDB,
+  tailwind: Tailwind,
+  storyblok: Storyblok,
   typescript: Typescript,
   javascript: Javascript,
   contentful: Contentful,
-  storyblok: Storyblok,
 };
 
 const imgIcons: Record<string, StaticImageData> = {

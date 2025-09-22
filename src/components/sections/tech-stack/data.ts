@@ -61,6 +61,19 @@ export const techStack: TechStack[] = [
     ],
   },
   {
+    title: "Database",
+    items: [
+      {
+        name: "MongoDB",
+        icon: "mongodb",
+      },
+      {
+        name: "SQLite",
+        icon: "sqlite",
+      },
+    ],
+  },
+  {
     title: "CMS",
     items: [
       {
@@ -113,6 +126,10 @@ export const techStack: TechStack[] = [
       {
         name: "OpenAI",
         icon: "openai",
+      },
+      {
+        name: "LangChain",
+        icon: "langchain",
       },
     ],
   },
