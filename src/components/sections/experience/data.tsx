@@ -2,6 +2,7 @@ import { TechnologyIcon } from "@/components/elements/technology-icon/technology
 import Image from "next/image";
 import BejamasLogo from "@/assets/img/companies/bejamas-logo.png";
 import UnisoftLogo from "@/assets/img/companies/unisoft-logo.png";
+import FairPayLogo from "@/assets/img/companies/fairpay-logo.png";
 
 interface Experience {
   title: string;
@@ -58,6 +59,59 @@ export const experienceData: Experience[] = [
             <TechnologyIcon name="storyblok" />
             <TechnologyIcon name="strapi" />
             <TechnologyIcon name="netlify" />
+            <TechnologyIcon name="vercel" />
+          </div>
+        </div>
+      </div>
+    ),
+  },
+  {
+    title: "2022-2023",
+    content: (
+      <div>
+        <div className="flex items-center">
+          <Image src={FairPayLogo} width={50} className="mr-4" alt="" />
+          <h2 className="text-3xl md:text-4xl mb-0 font-semibold">FairPay</h2>
+        </div>
+
+        <h3 className="text-sm md:text-base mt-3 mb-5 font-medium">
+          Remote · Part time · Fullstack Developer
+        </h3>
+
+        <div className="mb-10 leading-7">
+          <p className="text-balance mb-4">
+            Fairpay.ge was a website that provides users with salary statistics
+            and reviews about companies in Georgia. It allowed users to search
+            for companies and job titles to get insights into the salaries of
+            their peers, as well as providing reviews of the companies from
+            current and former employees
+          </p>
+
+          <p className="mb-2">As a Founder and Sole developer I:</p>
+
+          <ul className="list-disc ml-8 mb-10">
+            <li>
+              Founded and developed a salary transparency platform for the
+              Georgian market, inspired by Glassdoor (project canceled for now)
+            </li>
+            <li>
+              Built the frontend using Next.js, optimized for SEO and
+              performance
+            </li>
+            <li>Designed a clean and responsive UI</li>
+            <li>
+              Implemented user authentication using Passport.js with
+              session-based cookies
+            </li>
+          </ul>
+
+          <div className="flex gap-6 flex-wrap">
+            <TechnologyIcon name="typescript" />
+            <TechnologyIcon name="react" />
+            <TechnologyIcon name="nextjs" />
+            <TechnologyIcon name="nestjs" />
+            <TechnologyIcon name="mongodb" />
+            <TechnologyIcon name="figma" />
             <TechnologyIcon name="vercel" />
           </div>
         </div>
