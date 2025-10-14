@@ -17,7 +17,7 @@ export function Hero() {
 
           <div className="text-sm md:text-lg max-w-[600px] pr-4 font-normal text-balance">
             <p>
-              Frontned Focused Full Stack Developer with 5+ years of experience
+              Frontend-focused Full Stack Developer with 5+ years of experience
               building high-performance, SEO-optimized, and scalable web
               applications for international clients across Europe, Asia, and
               the U.S.
